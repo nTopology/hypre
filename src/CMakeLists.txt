@@ -27,7 +27,7 @@ option(HYPRE_SHARED               "Build a shared library" ON)
 option(HYPRE_BIGINT               "Use long long int for HYPRE_Int" OFF)
 option(HYPRE_SINGLE               "Use float for HYPRE_Real" OFF)
 option(HYPRE_LONG_DOUBLE          "Use long double for HYPRE_Real" OFF)
-option(HYPRE_SEQUENTIAL           "Compile without MPI" ON)
+option(HYPRE_SEQUENTIAL           "Compile without MPI" OFF)
 option(HYPRE_TIMING               "Use HYPRE timing routines" OFF)
 option(HYPRE_USING_HYPRE_BLAS     "Use internal BLAS library" ON)
 option(HYPRE_USING_HYPRE_LAPACK   "Use internal LAPACK library" ON)
@@ -734,6 +734,16 @@ list (APPEND HYPRE_SOURCES
   sstruct_ls/sys_semi_restrict.c
 )
 
+#ntop additions
+list (APPEND HYPRE_HEADERS
+  ntop_mpi/ntop_hypre_mpi.h
+)
+
+list (APPEND HYPRE_SOURCES
+  ntop_mpi/ntop_hypre_mpi.c
+  ntop_mpi/ntop_hypre_mpi.h
+)
+
 # Configure a header file to pass CMake settings to the source code
 configure_file (
   "${PROJECT_SOURCE_DIR}/config/HYPRE_config.h.cmake.in"
@@ -762,6 +772,7 @@ include_directories(struct_mv)
 include_directories(struct_ls)
 include_directories(sstruct_mv)
 include_directories(sstruct_ls)
+include_directories(ntop_mpi)
 
 # Set library build type
 if (HYPRE_SHARED)
@@ -840,6 +851,10 @@ if (HYPRE_USING_FEI)
 endif ()
 
 add_library (HYPRE ${HYPRE_SOURCES} ${FEI_LIBS})
+
+if(HYPRE_SHARED)
+  target_link_libraries(HYPRE PRIVATE ${MPI_C_LIBRARIES})
+endif()
 
 install (TARGETS HYPRE DESTINATION lib)
 install (FILES ${HYPRE_HEADERS} DESTINATION include)
