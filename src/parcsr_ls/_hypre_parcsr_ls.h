@@ -747,164 +747,319 @@ HYPRE_Int HYPRE_AMSFEISetup ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE
 HYPRE_Int HYPRE_AMSFEIDestroy ( HYPRE_Solver solver );
 
 /* HYPRE_parcsr_amg.c */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGCreate ( HYPRE_Solver *solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGDestroy ( HYPRE_Solver solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetup ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSolve ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSolveT ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRestriction ( HYPRE_Solver solver , HYPRE_Int restr_par );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMaxLevels ( HYPRE_Solver solver , HYPRE_Int max_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMaxLevels ( HYPRE_Solver solver , HYPRE_Int *max_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMaxCoarseSize ( HYPRE_Solver solver , HYPRE_Int max_coarse_size );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMaxCoarseSize ( HYPRE_Solver solver , HYPRE_Int *max_coarse_size );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMinCoarseSize ( HYPRE_Solver solver , HYPRE_Int min_coarse_size );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMinCoarseSize ( HYPRE_Solver solver , HYPRE_Int *min_coarse_size );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSeqThreshold ( HYPRE_Solver solver , HYPRE_Int seq_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSeqThreshold ( HYPRE_Solver solver , HYPRE_Int *seq_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRedundant ( HYPRE_Solver solver , HYPRE_Int redundant );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetRedundant ( HYPRE_Solver solver , HYPRE_Int *redundant );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetStrongThreshold ( HYPRE_Solver solver , HYPRE_Real strong_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetStrongThreshold ( HYPRE_Solver solver , HYPRE_Real *strong_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMaxRowSum ( HYPRE_Solver solver , HYPRE_Real max_row_sum );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMaxRowSum ( HYPRE_Solver solver , HYPRE_Real *max_row_sum );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetTruncFactor ( HYPRE_Solver solver , HYPRE_Real trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetTruncFactor ( HYPRE_Solver solver , HYPRE_Real *trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPMaxElmts ( HYPRE_Solver solver , HYPRE_Int P_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetPMaxElmts ( HYPRE_Solver solver , HYPRE_Int *P_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetJacobiTruncThreshold ( HYPRE_Solver solver , HYPRE_Real jacobi_trunc_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetJacobiTruncThreshold ( HYPRE_Solver solver , HYPRE_Real *jacobi_trunc_threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPostInterpType ( HYPRE_Solver solver , HYPRE_Int post_interp_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetPostInterpType ( HYPRE_Solver solver , HYPRE_Int *post_interp_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSCommPkgSwitch ( HYPRE_Solver solver , HYPRE_Real S_commpkg_switch );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpType ( HYPRE_Solver solver , HYPRE_Int interp_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSepWeight ( HYPRE_Solver solver , HYPRE_Int sep_weight );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMinIter ( HYPRE_Solver solver , HYPRE_Int min_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMaxIter ( HYPRE_Solver solver , HYPRE_Int max_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMaxIter ( HYPRE_Solver solver , HYPRE_Int *max_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCoarsenType ( HYPRE_Solver solver , HYPRE_Int coarsen_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetCoarsenType ( HYPRE_Solver solver , HYPRE_Int *coarsen_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMeasureType ( HYPRE_Solver solver , HYPRE_Int measure_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMeasureType ( HYPRE_Solver solver , HYPRE_Int *measure_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSetupType ( HYPRE_Solver solver , HYPRE_Int setup_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetOldDefault ( HYPRE_Solver solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCycleType ( HYPRE_Solver solver , HYPRE_Int cycle_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetCycleType ( HYPRE_Solver solver , HYPRE_Int *cycle_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetConvergeType ( HYPRE_Solver solver , HYPRE_Int type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetConvergeType ( HYPRE_Solver solver , HYPRE_Int *type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetTol ( HYPRE_Solver solver , HYPRE_Real tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetTol ( HYPRE_Solver solver , HYPRE_Real *tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumGridSweeps ( HYPRE_Solver solver , HYPRE_Int *num_grid_sweeps );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumSweeps ( HYPRE_Solver solver , HYPRE_Int num_sweeps );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCycleNumSweeps ( HYPRE_Solver solver , HYPRE_Int num_sweeps , HYPRE_Int k );
 HYPRE_Int HYPRE_BoomerAMGGetCycleNumSweeps ( HYPRE_Solver solver , HYPRE_Int *num_sweeps , HYPRE_Int k );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGInitGridRelaxation ( HYPRE_Int **num_grid_sweeps_ptr , HYPRE_Int **grid_relax_type_ptr , HYPRE_Int ***grid_relax_points_ptr , HYPRE_Int coarsen_type , HYPRE_Real **relax_weights_ptr , HYPRE_Int max_levels );
 HYPRE_Int HYPRE_BoomerAMGSetGridRelaxType ( HYPRE_Solver solver , HYPRE_Int *grid_relax_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRelaxType ( HYPRE_Solver solver , HYPRE_Int relax_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCycleRelaxType ( HYPRE_Solver solver , HYPRE_Int relax_type , HYPRE_Int k );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetCycleRelaxType ( HYPRE_Solver solver , HYPRE_Int *relax_type , HYPRE_Int k );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRelaxOrder ( HYPRE_Solver solver , HYPRE_Int relax_order );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetGridRelaxPoints ( HYPRE_Solver solver , HYPRE_Int **grid_relax_points );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRelaxWeight ( HYPRE_Solver solver , HYPRE_Real *relax_weight );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRelaxWt ( HYPRE_Solver solver , HYPRE_Real relax_wt );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetLevelRelaxWt ( HYPRE_Solver solver , HYPRE_Real relax_wt , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetOmega ( HYPRE_Solver solver , HYPRE_Real *omega );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetOuterWt ( HYPRE_Solver solver , HYPRE_Real outer_wt );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetLevelOuterWt ( HYPRE_Solver solver , HYPRE_Real outer_wt , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSmoothType ( HYPRE_Solver solver , HYPRE_Int smooth_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSmoothType ( HYPRE_Solver solver , HYPRE_Int *smooth_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSmoothNumLevels ( HYPRE_Solver solver , HYPRE_Int smooth_num_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSmoothNumLevels ( HYPRE_Solver solver , HYPRE_Int *smooth_num_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSmoothNumSweeps ( HYPRE_Solver solver , HYPRE_Int smooth_num_sweeps );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSmoothNumSweeps ( HYPRE_Solver solver , HYPRE_Int *smooth_num_sweeps );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetLogging ( HYPRE_Solver solver , HYPRE_Int logging );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetLogging ( HYPRE_Solver solver , HYPRE_Int *logging );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPrintLevel ( HYPRE_Solver solver , HYPRE_Int print_level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetPrintLevel ( HYPRE_Solver solver , HYPRE_Int *print_level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPrintFileName ( HYPRE_Solver solver , const char *print_file_name );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetDebugFlag ( HYPRE_Solver solver , HYPRE_Int debug_flag );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetDebugFlag ( HYPRE_Solver solver , HYPRE_Int *debug_flag );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetNumIterations ( HYPRE_Solver solver , HYPRE_Int *num_iterations );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetCumNumIterations ( HYPRE_Solver solver , HYPRE_Int *cum_num_iterations );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetResidual ( HYPRE_Solver solver , HYPRE_ParVector *residual );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetFinalRelativeResidualNorm ( HYPRE_Solver solver , HYPRE_Real *rel_resid_norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetVariant ( HYPRE_Solver solver , HYPRE_Int variant );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetVariant ( HYPRE_Solver solver , HYPRE_Int *variant );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetOverlap ( HYPRE_Solver solver , HYPRE_Int overlap );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetOverlap ( HYPRE_Solver solver , HYPRE_Int *overlap );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetDomainType ( HYPRE_Solver solver , HYPRE_Int domain_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetDomainType ( HYPRE_Solver solver , HYPRE_Int *domain_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSchwarzRlxWeight ( HYPRE_Solver solver , HYPRE_Real schwarz_rlx_weight );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSchwarzRlxWeight ( HYPRE_Solver solver , HYPRE_Real *schwarz_rlx_weight );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSchwarzUseNonSymm ( HYPRE_Solver solver , HYPRE_Int use_nonsymm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSym ( HYPRE_Solver solver , HYPRE_Int sym );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetLevel ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetThreshold ( HYPRE_Solver solver , HYPRE_Real threshold );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetFilter ( HYPRE_Solver solver , HYPRE_Real filter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetDropTol ( HYPRE_Solver solver , HYPRE_Real drop_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMaxNzPerRow ( HYPRE_Solver solver , HYPRE_Int max_nz_per_row );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetEuclidFile ( HYPRE_Solver solver , char *euclidfile );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetEuLevel ( HYPRE_Solver solver , HYPRE_Int eu_level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetEuSparseA ( HYPRE_Solver solver , HYPRE_Real eu_sparse_A );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetEuBJ ( HYPRE_Solver solver , HYPRE_Int eu_bj );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumFunctions ( HYPRE_Solver solver , HYPRE_Int num_functions );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetNumFunctions ( HYPRE_Solver solver , HYPRE_Int *num_functions );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNodal ( HYPRE_Solver solver , HYPRE_Int nodal );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNodalLevels ( HYPRE_Solver solver , HYPRE_Int nodal_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNodalDiag ( HYPRE_Solver solver , HYPRE_Int nodal );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetDofFunc ( HYPRE_Solver solver , HYPRE_Int *dof_func );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumPaths ( HYPRE_Solver solver , HYPRE_Int num_paths );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggNumLevels ( HYPRE_Solver solver , HYPRE_Int agg_num_levels );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggInterpType ( HYPRE_Solver solver , HYPRE_Int agg_interp_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggTruncFactor ( HYPRE_Solver solver , HYPRE_Real agg_trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAddTruncFactor ( HYPRE_Solver solver , HYPRE_Real add_trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMultAddTruncFactor ( HYPRE_Solver solver , HYPRE_Real add_trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggP12TruncFactor ( HYPRE_Solver solver , HYPRE_Real agg_P12_trunc_factor );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggPMaxElmts ( HYPRE_Solver solver , HYPRE_Int agg_P_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAddPMaxElmts ( HYPRE_Solver solver , HYPRE_Int add_P_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMultAddPMaxElmts ( HYPRE_Solver solver , HYPRE_Int add_P_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAddRelaxType ( HYPRE_Solver solver , HYPRE_Int add_rlx_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAddRelaxWt ( HYPRE_Solver solver , HYPRE_Real add_rlx_wt );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAggP12MaxElmts ( HYPRE_Solver solver , HYPRE_Int agg_P12_max_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumCRRelaxSteps ( HYPRE_Solver solver , HYPRE_Int num_CR_relax_steps );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCRRate ( HYPRE_Solver solver , HYPRE_Real CR_rate );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCRStrongTh ( HYPRE_Solver solver , HYPRE_Real CR_strong_th );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetADropTol( HYPRE_Solver  solver, HYPRE_Real    A_drop_tol  );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetISType ( HYPRE_Solver solver , HYPRE_Int IS_type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCRUseCG ( HYPRE_Solver solver , HYPRE_Int CR_use_CG );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetGSMG ( HYPRE_Solver solver , HYPRE_Int gsmg );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNumSamples ( HYPRE_Solver solver , HYPRE_Int gsmg );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCGCIts ( HYPRE_Solver solver , HYPRE_Int its );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPlotGrids ( HYPRE_Solver solver , HYPRE_Int plotgrids );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetPlotFileName ( HYPRE_Solver solver , const char *plotfilename );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCoordDim ( HYPRE_Solver solver , HYPRE_Int coorddim );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCoordinates ( HYPRE_Solver solver , float *coordinates );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetChebyOrder ( HYPRE_Solver solver , HYPRE_Int order );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetChebyFraction ( HYPRE_Solver solver , HYPRE_Real ratio );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetChebyEigEst ( HYPRE_Solver solver , HYPRE_Int eig_est );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetChebyVariant ( HYPRE_Solver solver , HYPRE_Int variant );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetChebyScale ( HYPRE_Solver solver , HYPRE_Int scale );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpVectors ( HYPRE_Solver solver , HYPRE_Int num_vectors , HYPRE_ParVector *vectors );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpVecVariant ( HYPRE_Solver solver , HYPRE_Int num );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpVecQMax ( HYPRE_Solver solver , HYPRE_Int q_max );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpVecAbsQTrunc ( HYPRE_Solver solver , HYPRE_Real q_trunc );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSmoothInterpVectors ( HYPRE_Solver solver , HYPRE_Int smooth_interp_vectors );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpRefine ( HYPRE_Solver solver , HYPRE_Int num_refine );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetInterpVecFirstLevel ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAdditive ( HYPRE_Solver solver , HYPRE_Int additive );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetAdditive ( HYPRE_Solver solver , HYPRE_Int *additive );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetMultAdditive ( HYPRE_Solver solver , HYPRE_Int mult_additive );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetMultAdditive ( HYPRE_Solver solver , HYPRE_Int *mult_additive );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetSimple ( HYPRE_Solver solver , HYPRE_Int simple );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGGetSimple ( HYPRE_Solver solver , HYPRE_Int *simple );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetAddLastLvl ( HYPRE_Solver solver , HYPRE_Int add_last_lvl );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNonGalerkinTol ( HYPRE_Solver solver , HYPRE_Real nongalerkin_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetLevelNonGalerkinTol ( HYPRE_Solver solver , HYPRE_Real nongalerkin_tol , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetNonGalerkTol ( HYPRE_Solver solver , HYPRE_Int nongalerk_num_tol , HYPRE_Real *nongalerk_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetRAP2 ( HYPRE_Solver solver , HYPRE_Int rap2 );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetKeepTranspose ( HYPRE_Solver solver , HYPRE_Int keepTranspose );
 #ifdef HAVE_DSUPERLU
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetDSLUThreshold ( HYPRE_Solver solver , HYPRE_Int slu_threshold );
 #endif
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_BoomerAMGSetCpointsToKeep( HYPRE_Solver solver, HYPRE_Int cpt_coarse_level, HYPRE_Int num_cpt_coarse,HYPRE_Int *cpt_coarse_index);
 
 /* HYPRE_parcsr_bicgstab.c */
@@ -1122,23 +1277,41 @@ HYPRE_Int HYPRE_ParaSailsGetLogging ( HYPRE_Solver solver , HYPRE_Int *logging )
 HYPRE_Int HYPRE_ParaSailsBuildIJMatrix ( HYPRE_Solver solver , HYPRE_IJMatrix *pij_A );
 
 /* HYPRE_parcsr_pcg.c */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGCreate ( MPI_Comm comm , HYPRE_Solver *solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGDestroy ( HYPRE_Solver solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetup ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSolve ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetTol ( HYPRE_Solver solver , HYPRE_Real tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetAbsoluteTol ( HYPRE_Solver solver , HYPRE_Real a_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetMaxIter ( HYPRE_Solver solver , HYPRE_Int max_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetStopCrit ( HYPRE_Solver solver , HYPRE_Int stop_crit );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetTwoNorm ( HYPRE_Solver solver , HYPRE_Int two_norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetRelChange ( HYPRE_Solver solver , HYPRE_Int rel_change );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetPrecond ( HYPRE_Solver solver , HYPRE_PtrToParSolverFcn precond , HYPRE_PtrToParSolverFcn precond_setup , HYPRE_Solver precond_solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGGetPrecond ( HYPRE_Solver solver , HYPRE_Solver *precond_data_ptr );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetPrintLevel ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetLogging ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGGetNumIterations ( HYPRE_Solver solver , HYPRE_Int *num_iterations );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGGetFinalRelativeResidualNorm ( HYPRE_Solver solver , HYPRE_Real *norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRDiagScaleSetup ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector y , HYPRE_ParVector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRDiagScale ( HYPRE_Solver solver , HYPRE_ParCSRMatrix HA , HYPRE_ParVector Hy , HYPRE_ParVector Hx );
 
 /* HYPRE_parcsr_pilut.c */

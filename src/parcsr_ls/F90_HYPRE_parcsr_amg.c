@@ -27,6 +27,7 @@ extern "C" {
  * HYPRE_BoomerAMGCreate
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgcreate, HYPRE_BOOMERAMGCREATE)
    ( hypre_F90_Obj *solver,
@@ -41,6 +42,7 @@ hypre_F90_IFACE(hypre_boomeramgcreate, HYPRE_BOOMERAMGCREATE)
  * HYPRE_BoomerAMGDestroy
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void 
 hypre_F90_IFACE(hypre_boomeramgdestroy, HYPRE_BOOMERAMGDESTROY)
    ( hypre_F90_Obj *solver,
@@ -55,6 +57,7 @@ hypre_F90_IFACE(hypre_boomeramgdestroy, HYPRE_BOOMERAMGDESTROY)
  * HYPRE_BoomerAMGSetup
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void 
 hypre_F90_IFACE(hypre_boomeramgsetup, HYPRE_BOOMERAMGSETUP)
    ( hypre_F90_Obj *solver,
@@ -75,6 +78,7 @@ hypre_F90_IFACE(hypre_boomeramgsetup, HYPRE_BOOMERAMGSETUP)
  * HYPRE_BoomerAMGSolve
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void 
 hypre_F90_IFACE(hypre_boomeramgsolve, HYPRE_BOOMERAMGSOLVE)
    ( hypre_F90_Obj *solver,
@@ -95,6 +99,7 @@ hypre_F90_IFACE(hypre_boomeramgsolve, HYPRE_BOOMERAMGSOLVE)
  * HYPRE_BoomerAMGSolveT
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void 
 hypre_F90_IFACE(hypre_boomeramgsolvet, HYPRE_BOOMERAMGSOLVET)
    ( hypre_F90_Obj *solver,
@@ -115,6 +120,7 @@ hypre_F90_IFACE(hypre_boomeramgsolvet, HYPRE_BOOMERAMGSOLVET)
  * HYPRE_BoomerAMGSetRestriction
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrestriction, HYPRE_BOOMERAMGSETRESTRICTION)
    ( hypre_F90_Obj *solver,
@@ -131,6 +137,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrestriction, HYPRE_BOOMERAMGSETRESTRICTION)
  * HYPRE_BoomerAMGSetMaxLevels, HYPRE_BoomerAMGGetMaxLevels
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmaxlevels, HYPRE_BOOMERAMGSETMAXLEVELS)
    ( hypre_F90_Obj *solver,
@@ -145,6 +152,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmaxlevels, HYPRE_BOOMERAMGSETMAXLEVELS)
 
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmaxlevels, HYPRE_BOOMERAMGGETMAXLEVELS)
    ( hypre_F90_Obj *solver,
@@ -162,6 +170,7 @@ hypre_F90_IFACE(hypre_boomeramggetmaxlevels, HYPRE_BOOMERAMGGETMAXLEVELS)
  *--------------------------------------------------------------------------*/
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmaxcoarsesize, HYPRE_BOOMERAMGSETMAXCOARSESIZE)
    ( hypre_F90_Obj *solver,
@@ -176,6 +185,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmaxcoarsesize, HYPRE_BOOMERAMGSETMAXCOARSESIZE
 
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmaxcoarsesize, HYPRE_BOOMERAMGGETMAXCOARSESIZE)
    ( hypre_F90_Obj *solver,
@@ -194,6 +204,7 @@ hypre_F90_IFACE(hypre_boomeramggetmaxcoarsesize, HYPRE_BOOMERAMGGETMAXCOARSESIZE
  *--------------------------------------------------------------------------*/
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmincoarsesize, HYPRE_BOOMERAMGSETMINCOARSESIZE)
    ( hypre_F90_Obj *solver,
@@ -208,6 +219,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmincoarsesize, HYPRE_BOOMERAMGSETMINCOARSESIZE
 
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmincoarsesize, HYPRE_BOOMERAMGGETMINCOARSESIZE)
    ( hypre_F90_Obj *solver,
@@ -227,6 +239,7 @@ hypre_F90_IFACE(hypre_boomeramggetmincoarsesize, HYPRE_BOOMERAMGGETMINCOARSESIZE
  * HYPRE_BoomerAMGSetStrongThreshold, HYPRE_BoomerAMGGetStrongThreshold
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetstrongthrshld, HYPRE_BOOMERAMGSETSTRONGTHRSHLD)
    ( hypre_F90_Obj *solver,
@@ -239,6 +252,7 @@ hypre_F90_IFACE(hypre_boomeramgsetstrongthrshld, HYPRE_BOOMERAMGSETSTRONGTHRSHLD
            hypre_F90_PassReal (strong_threshold) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetstrongthrshld, HYPRE_BOOMERAMGGETSTRONGTHRSHLD)
    ( hypre_F90_Obj *solver,
@@ -255,6 +269,7 @@ hypre_F90_IFACE(hypre_boomeramggetstrongthrshld, HYPRE_BOOMERAMGGETSTRONGTHRSHLD
  * HYPRE_BoomerAMGSetMaxRowSum, HYPRE_BoomerAMGGetMaxRowSum
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmaxrowsum, HYPRE_BOOMERAMGSETMAXROWSUM)
    ( hypre_F90_Obj *solver,
@@ -267,6 +282,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmaxrowsum, HYPRE_BOOMERAMGSETMAXROWSUM)
            hypre_F90_PassReal (max_row_sum) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmaxrowsum, HYPRE_BOOMERAMGGETMAXROWSUM)
    ( hypre_F90_Obj *solver,
@@ -283,6 +299,7 @@ hypre_F90_IFACE(hypre_boomeramggetmaxrowsum, HYPRE_BOOMERAMGGETMAXROWSUM)
  * HYPRE_BoomerAMGSetTruncFactor, HYPRE_BoomerAMGGetTruncFactor
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsettruncfactor, HYPRE_BOOMERAMGSETTRUNCFACTOR)
    ( hypre_F90_Obj *solver,
@@ -295,6 +312,7 @@ hypre_F90_IFACE(hypre_boomeramgsettruncfactor, HYPRE_BOOMERAMGSETTRUNCFACTOR)
            hypre_F90_PassReal (trunc_factor) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggettruncfactor, HYPRE_BOOMERAMGGETTRUNCFACTOR)
    ( hypre_F90_Obj *solver,
@@ -311,6 +329,7 @@ hypre_F90_IFACE(hypre_boomeramggettruncfactor, HYPRE_BOOMERAMGGETTRUNCFACTOR)
  * HYPRE_BoomerAMGSetPMaxElmts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetpmaxelmts, HYPRE_BOOMERAMGSETPMAXELMTS)
    ( hypre_F90_Obj *solver,
@@ -323,6 +342,7 @@ hypre_F90_IFACE(hypre_boomeramgsetpmaxelmts, HYPRE_BOOMERAMGSETPMAXELMTS)
            hypre_F90_PassInt (p_max_elmts) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetpmaxelmts, HYPRE_BOOMERAMGGETPMAXELMTS)
    ( hypre_F90_Obj *solver,
@@ -339,6 +359,7 @@ hypre_F90_IFACE(hypre_boomeramggetpmaxelmts, HYPRE_BOOMERAMGGETPMAXELMTS)
  * HYPRE_BoomerAMGSetJacobiTruncThreshold, HYPRE_BoomerAMGGetJacobiTruncThreshold
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetjacobitrunc, HYPRE_BOOMERAMGSETJACOBITRUNC)
    ( hypre_F90_Obj *solver,
@@ -351,6 +372,7 @@ hypre_F90_IFACE(hypre_boomeramgsetjacobitrunc, HYPRE_BOOMERAMGSETJACOBITRUNC)
            hypre_F90_PassReal (trunc_factor) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetjacobitrunc, HYPRE_BOOMERAMGGETJACOBITRUNC)
    ( hypre_F90_Obj *solver,
@@ -369,6 +391,7 @@ hypre_F90_IFACE(hypre_boomeramggetjacobitrunc, HYPRE_BOOMERAMGGETJACOBITRUNC)
  * defaults to 0, for nothing.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetpostinterp, HYPRE_BOOMERAMGSETPOSTINTERP)
    ( hypre_F90_Obj *solver,
@@ -386,6 +409,7 @@ hypre_F90_IFACE(hypre_boomeramgsetpostinterp, HYPRE_BOOMERAMGSETPOSTINTERP)
  * HYPRE_BoomerAMGSetSCommPkgSwitch
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetscommpkgswitc, HYPRE_BOOMERAMGSETSCOMMPKGSWITC)
    ( hypre_F90_Obj *solver,
@@ -404,6 +428,7 @@ hypre_F90_IFACE(hypre_boomeramgsetscommpkgswitc, HYPRE_BOOMERAMGSETSCOMMPKGSWITC
  * HYPRE_BoomerAMGSetInterpType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetinterptype, HYPRE_BOOMERAMGSETINTERPTYPE)
    ( hypre_F90_Obj *solver,
@@ -418,6 +443,7 @@ hypre_F90_IFACE(hypre_boomeramgsetinterptype, HYPRE_BOOMERAMGSETINTERPTYPE)
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetSepWeight
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsepweight, HYPRE_BOOMERAMGSETSEPWEIGHT)
    ( hypre_F90_Obj *solver,
@@ -434,6 +460,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsepweight, HYPRE_BOOMERAMGSETSEPWEIGHT)
  * HYPRE_BoomerAMGSetMinIter
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetminiter, HYPRE_BOOMERAMGSETMINITER)
    ( hypre_F90_Obj *solver,
@@ -450,6 +477,7 @@ hypre_F90_IFACE(hypre_boomeramgsetminiter, HYPRE_BOOMERAMGSETMINITER)
  * HYPRE_BoomerAMGSetMaxIter, HYPRE_BoomerAMGGetMaxIter
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmaxiter, HYPRE_BOOMERAMGSETMAXITER)
    ( hypre_F90_Obj *solver,
@@ -462,6 +490,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmaxiter, HYPRE_BOOMERAMGSETMAXITER)
            hypre_F90_PassInt (max_iter) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmaxiter, HYPRE_BOOMERAMGGETMAXITER)
    ( hypre_F90_Obj *solver,
@@ -478,6 +507,7 @@ hypre_F90_IFACE(hypre_boomeramggetmaxiter, HYPRE_BOOMERAMGGETMAXITER)
  * HYPRE_BoomerAMGSetCoarsenType, HYPRE_BoomerAMGGetCoarsenType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetcoarsentype, HYPRE_BOOMERAMGSETCOARSENTYPE)
    ( hypre_F90_Obj *solver,
@@ -490,6 +520,7 @@ hypre_F90_IFACE(hypre_boomeramgsetcoarsentype, HYPRE_BOOMERAMGSETCOARSENTYPE)
            hypre_F90_PassInt (coarsen_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetcoarsentype, HYPRE_BOOMERAMGGETCOARSENTYPE)
    ( hypre_F90_Obj *solver,
@@ -506,6 +537,7 @@ hypre_F90_IFACE(hypre_boomeramggetcoarsentype, HYPRE_BOOMERAMGGETCOARSENTYPE)
  * HYPRE_BoomerAMGSetMeasureType, HYPRE_BoomerAMGGetMeasureType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmeasuretype, HYPRE_BOOMERAMGSETMEASURETYPE)
    ( hypre_F90_Obj *solver,
@@ -518,6 +550,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmeasuretype, HYPRE_BOOMERAMGSETMEASURETYPE)
            hypre_F90_PassInt (measure_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmeasuretype, HYPRE_BOOMERAMGGETMEASURETYPE)
    ( hypre_F90_Obj *solver,
@@ -534,6 +567,7 @@ hypre_F90_IFACE(hypre_boomeramggetmeasuretype, HYPRE_BOOMERAMGGETMEASURETYPE)
  * HYPRE_BoomerAMGSetOldDefault
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetolddefault, HYPRE_BOOMERAMGSETOLDDEFAULT)
    ( hypre_F90_Obj *solver,
@@ -548,6 +582,7 @@ hypre_F90_IFACE(hypre_boomeramgsetolddefault, HYPRE_BOOMERAMGSETOLDDEFAULT)
  * HYPRE_BoomerAMGSetSetupType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsetuptype, HYPRE_BOOMERAMGSETSETUPTYPE)
    ( hypre_F90_Obj *solver,
@@ -564,6 +599,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsetuptype, HYPRE_BOOMERAMGSETSETUPTYPE)
  * HYPRE_BoomerAMGSetCycleType, HYPRE_BoomerAMGGetCycleType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetcycletype, HYPRE_BOOMERAMGSETCYCLETYPE)
    ( hypre_F90_Obj *solver,
@@ -576,6 +612,7 @@ hypre_F90_IFACE(hypre_boomeramgsetcycletype, HYPRE_BOOMERAMGSETCYCLETYPE)
            hypre_F90_PassInt (cycle_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetcycletype, HYPRE_BOOMERAMGGETCYCLETYPE)
    ( hypre_F90_Obj *solver,
@@ -592,6 +629,7 @@ hypre_F90_IFACE(hypre_boomeramggetcycletype, HYPRE_BOOMERAMGGETCYCLETYPE)
  * HYPRE_BoomerAMGSetTol, HYPRE_BoomerAMGGetTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsettol, HYPRE_BOOMERAMGSETTOL)
    ( hypre_F90_Obj *solver,
@@ -604,6 +642,7 @@ hypre_F90_IFACE(hypre_boomeramgsettol, HYPRE_BOOMERAMGSETTOL)
            hypre_F90_PassReal (tol)     ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggettol, HYPRE_BOOMERAMGGETTOL)
    ( hypre_F90_Obj *solver,
@@ -621,6 +660,7 @@ hypre_F90_IFACE(hypre_boomeramggettol, HYPRE_BOOMERAMGGETTOL)
  * DEPRECATED.  Use SetNumSweeps and SetCycleNumSweeps instead.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnumgridsweeps, HYPRE_BOOMERAMGSETNUMGRIDSWEEPS)
    ( hypre_F90_Obj *solver,
@@ -637,6 +677,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnumgridsweeps, HYPRE_BOOMERAMGSETNUMGRIDSWEEPS
  * HYPRE_BoomerAMGSetNumSweeps
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnumsweeps, HYPRE_BOOMERAMGSETNUMSWEEPS)
    ( hypre_F90_Obj *solver,
@@ -653,6 +694,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnumsweeps, HYPRE_BOOMERAMGSETNUMSWEEPS)
  * HYPRE_BoomerAMGSetCycleNumSweeps, HYPRE_BoomerAMGGetCycleNumSweeps
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetcyclenumsweeps, HYPRE_BOOMERAMGSETCYCLENUMSWEEPS)
    ( hypre_F90_Obj *solver,
@@ -667,6 +709,7 @@ hypre_F90_IFACE(hypre_boomeramgsetcyclenumsweeps, HYPRE_BOOMERAMGSETCYCLENUMSWEE
            hypre_F90_PassInt (k) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetcyclenumsweeps, HYPRE_BOOMERAMGGETCYCLENUMSWEEPS)
    ( hypre_F90_Obj *solver,
@@ -688,6 +731,7 @@ hypre_F90_IFACE(hypre_boomeramggetcyclenumsweeps, HYPRE_BOOMERAMGGETCYCLENUMSWEE
  * anything with the pointers to arrays that are allocated.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramginitgridrelaxatn, HYPRE_BOOMERAMGINITGRIDRELAXATN)
    ( hypre_F90_Obj *num_grid_sweeps,
@@ -720,6 +764,7 @@ hypre_F90_IFACE(hypre_boomeramginitgridrelaxatn, HYPRE_BOOMERAMGINITGRIDRELAXATN
  * anything with the pointers to arrays.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgfingridrelaxatn, HYPRE_BOOMERAMGFINGRIDRELAXATN)
    ( hypre_F90_Obj *num_grid_sweeps,
@@ -746,6 +791,7 @@ hypre_F90_IFACE(hypre_boomeramgfingridrelaxatn, HYPRE_BOOMERAMGFINGRIDRELAXATN)
  * DEPRECATED.  Use SetRelaxType and SetCycleRelaxType instead.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetgridrelaxtype, HYPRE_BOOMERAMGSETGRIDRELAXTYPE)
    ( hypre_F90_Obj *solver,
@@ -762,6 +808,7 @@ hypre_F90_IFACE(hypre_boomeramgsetgridrelaxtype, HYPRE_BOOMERAMGSETGRIDRELAXTYPE
  * HYPRE_BoomerAMGSetRelaxType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrelaxtype, HYPRE_BOOMERAMGSETRELAXTYPE)
    ( hypre_F90_Obj *solver,
@@ -778,6 +825,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrelaxtype, HYPRE_BOOMERAMGSETRELAXTYPE)
  * HYPRE_BoomerAMGSetCycleRelaxType, HYPRE_BoomerAMGGetCycleRelaxType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetcyclerelaxtype, HYPRE_BOOMERAMGSETCYCLERELAXTYPE)
    ( hypre_F90_Obj *solver,
@@ -792,6 +840,7 @@ hypre_F90_IFACE(hypre_boomeramgsetcyclerelaxtype, HYPRE_BOOMERAMGSETCYCLERELAXTY
            hypre_F90_PassInt (k) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetcyclerelaxtype, HYPRE_BOOMERAMGGETCYCLERELAXTYPE)
    ( hypre_F90_Obj *solver,
@@ -810,6 +859,7 @@ hypre_F90_IFACE(hypre_boomeramggetcyclerelaxtype, HYPRE_BOOMERAMGGETCYCLERELAXTY
  * HYPRE_BoomerAMGSetRelaxOrder
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrelaxorder, HYPRE_BOOMERAMGSETRELAXORDER)
    ( hypre_F90_Obj *solver,
@@ -827,6 +877,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrelaxorder, HYPRE_BOOMERAMGSETRELAXORDER)
  * DEPRECATED.  There is no alternative function.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetgridrelaxpnts, HYPRE_BOOMERAMGSETGRIDRELAXPNTS)
    ( hypre_F90_Obj *solver,
@@ -844,6 +895,7 @@ hypre_F90_IFACE(hypre_boomeramgsetgridrelaxpnts, HYPRE_BOOMERAMGSETGRIDRELAXPNTS
  * DEPRECATED.  Use SetRelaxWt and SetLevelRelaxWt instead.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrelaxweight, HYPRE_BOOMERAMGSETRELAXWEIGHT)
    ( hypre_F90_Obj *solver,
@@ -860,6 +912,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrelaxweight, HYPRE_BOOMERAMGSETRELAXWEIGHT)
  * HYPRE_BoomerAMGSetRelaxWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrelaxwt, HYPRE_BOOMERAMGSETRELAXWT)
    ( hypre_F90_Obj *solver,
@@ -876,6 +929,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrelaxwt, HYPRE_BOOMERAMGSETRELAXWT)
  * HYPRE_BoomerAMGSetLevelRelaxWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetlevelrelaxwt, HYPRE_BOOMERAMGSETLEVELRELAXWT)
    ( hypre_F90_Obj *solver,
@@ -897,6 +951,7 @@ hypre_F90_IFACE(hypre_boomeramgsetlevelrelaxwt, HYPRE_BOOMERAMGSETLEVELRELAXWT)
  * HYPRE_BoomerAMGSetOuterWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetouterwt, HYPRE_BOOMERAMGSETOUTERWT)
    ( hypre_F90_Obj *solver,
@@ -913,6 +968,7 @@ hypre_F90_IFACE(hypre_boomeramgsetouterwt, HYPRE_BOOMERAMGSETOUTERWT)
  * HYPRE_BoomerAMGSetLevelOuterWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetlevelouterwt, HYPRE_BOOMERAMGSETLEVELOUTERWT)
    ( hypre_F90_Obj *solver,
@@ -931,6 +987,7 @@ hypre_F90_IFACE(hypre_boomeramgsetlevelouterwt, HYPRE_BOOMERAMGSETLEVELOUTERWT)
  * HYPRE_BoomerAMGSetSmoothType, HYPRE_BoomerAMGGetSmoothType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsmoothtype, HYPRE_BOOMERAMGSETSMOOTHTYPE)
    ( hypre_F90_Obj *solver,
@@ -943,6 +1000,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsmoothtype, HYPRE_BOOMERAMGSETSMOOTHTYPE)
            hypre_F90_PassInt (smooth_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetsmoothtype, HYPRE_BOOMERAMGGETSMOOTHTYPE)
    ( hypre_F90_Obj *solver,
@@ -959,6 +1017,7 @@ hypre_F90_IFACE(hypre_boomeramggetsmoothtype, HYPRE_BOOMERAMGGETSMOOTHTYPE)
  * HYPRE_BoomerAMGSetSmoothNumLvls, HYPRE_BoomerAMGGetSmoothNumLvls
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsmoothnumlvls, HYPRE_BOOMERAMGSETSMOOTHNUMLVLS)
    ( hypre_F90_Obj *solver,
@@ -971,6 +1030,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsmoothnumlvls, HYPRE_BOOMERAMGSETSMOOTHNUMLVLS
            hypre_F90_PassInt (smooth_num_levels) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetsmoothnumlvls, HYPRE_BOOMERAMGGETSMOOTHNUMLVLS)
    ( hypre_F90_Obj *solver,
@@ -987,6 +1047,7 @@ hypre_F90_IFACE(hypre_boomeramggetsmoothnumlvls, HYPRE_BOOMERAMGGETSMOOTHNUMLVLS
  * HYPRE_BoomerAMGSetSmoothNumSwps, HYPRE_BoomerAMGGetSmoothNumSwps
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsmoothnumswps, HYPRE_BOOMERAMGSETSMOOTHNUMSWPS)
    ( hypre_F90_Obj *solver,
@@ -999,6 +1060,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsmoothnumswps, HYPRE_BOOMERAMGSETSMOOTHNUMSWPS
            hypre_F90_PassInt (smooth_num_sweeps) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetsmoothnumswps, HYPRE_BOOMERAMGGETSMOOTHNUMSWPS)
    ( hypre_F90_Obj *solver,
@@ -1015,6 +1077,7 @@ hypre_F90_IFACE(hypre_boomeramggetsmoothnumswps, HYPRE_BOOMERAMGGETSMOOTHNUMSWPS
  * HYPRE_BoomerAMGSetLogging, HYPRE_BoomerAMGGetLogging
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetlogging, HYPRE_BOOMERAMGSETLOGGING)
    ( hypre_F90_Obj *solver,
@@ -1027,6 +1090,7 @@ hypre_F90_IFACE(hypre_boomeramgsetlogging, HYPRE_BOOMERAMGSETLOGGING)
            hypre_F90_PassInt (logging) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetlogging, HYPRE_BOOMERAMGGETLOGGING)
    ( hypre_F90_Obj *solver,
@@ -1043,6 +1107,7 @@ hypre_F90_IFACE(hypre_boomeramggetlogging, HYPRE_BOOMERAMGGETLOGGING)
  * HYPRE_BoomerAMGSetPrintLevel, HYPRE_BoomerAMGGetPrintLevel
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetprintlevel, HYPRE_BOOMERAMGSETPRINTLEVEL)
    ( hypre_F90_Obj *solver,
@@ -1055,6 +1120,7 @@ hypre_F90_IFACE(hypre_boomeramgsetprintlevel, HYPRE_BOOMERAMGSETPRINTLEVEL)
            hypre_F90_PassInt (print_level) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetprintlevel, HYPRE_BOOMERAMGGETPRINTLEVEL)
    ( hypre_F90_Obj *solver,
@@ -1071,6 +1137,7 @@ hypre_F90_IFACE(hypre_boomeramggetprintlevel, HYPRE_BOOMERAMGGETPRINTLEVEL)
  * HYPRE_BoomerAMGSetPrintFileName
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetprintfilename, HYPRE_BOOMERAMGSETPRINTFILENAME)
    ( hypre_F90_Obj *solver,
@@ -1087,6 +1154,7 @@ hypre_F90_IFACE(hypre_boomeramgsetprintfilename, HYPRE_BOOMERAMGSETPRINTFILENAME
  * HYPRE_BoomerAMGSetDebugFlag, HYPRE_BoomerAMGGetDebugFlag
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetdebugflag, HYPRE_BOOMERAMGSETDEBUGFLAG)
    ( hypre_F90_Obj *solver,
@@ -1099,6 +1167,7 @@ hypre_F90_IFACE(hypre_boomeramgsetdebugflag, HYPRE_BOOMERAMGSETDEBUGFLAG)
            hypre_F90_PassInt (debug_flag) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetdebugflag, HYPRE_BOOMERAMGGETDEBUGFLAG)
    ( hypre_F90_Obj *solver,
@@ -1115,6 +1184,7 @@ hypre_F90_IFACE(hypre_boomeramggetdebugflag, HYPRE_BOOMERAMGGETDEBUGFLAG)
  * HYPRE_BoomerAMGGetNumIterations
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetnumiterations, HYPRE_BOOMERAMGGETNUMITERATIONS)
    ( hypre_F90_Obj *solver,
@@ -1131,6 +1201,7 @@ hypre_F90_IFACE(hypre_boomeramggetnumiterations, HYPRE_BOOMERAMGGETNUMITERATIONS
  * HYPRE_BoomerAMGGetCumNumIterations
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetcumnumiterati, HYPRE_BOOMERAMGGETCUMNUMITERATI)
    ( hypre_F90_Obj *solver,
@@ -1147,6 +1218,7 @@ hypre_F90_IFACE(hypre_boomeramggetcumnumiterati, HYPRE_BOOMERAMGGETCUMNUMITERATI
  * HYPRE_BoomerAMGGetResidual
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetresidual, HYPRE_BOOMERAMGGETRESIDUAL)
    ( hypre_F90_Obj *solver,
@@ -1163,6 +1235,7 @@ hypre_F90_IFACE(hypre_boomeramggetresidual, HYPRE_BOOMERAMGGETRESIDUAL)
  * HYPRE_BoomerAMGGetFinalRelativeResNorm
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetfinalreltvres, HYPRE_BOOMERAMGGETFINALRELTVRES)
    ( hypre_F90_Obj *solver,
@@ -1179,6 +1252,7 @@ hypre_F90_IFACE(hypre_boomeramggetfinalreltvres, HYPRE_BOOMERAMGGETFINALRELTVRES
  * HYPRE_BoomerAMGSetVariant, HYPRE_BoomerAMGGetVariant
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetvariant, HYPRE_BOOMERAMGSETVARIANT)
    ( hypre_F90_Obj *solver,
@@ -1191,6 +1265,7 @@ hypre_F90_IFACE(hypre_boomeramgsetvariant, HYPRE_BOOMERAMGSETVARIANT)
            hypre_F90_PassInt (variant) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetvariant, HYPRE_BOOMERAMGGETVARIANT)
    ( hypre_F90_Obj *solver,
@@ -1207,6 +1282,7 @@ hypre_F90_IFACE(hypre_boomeramggetvariant, HYPRE_BOOMERAMGGETVARIANT)
  * HYPRE_BoomerAMGSetOverlap, HYPRE_BoomerAMGGetOverlap
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetoverlap, HYPRE_BOOMERAMGSETOVERLAP)
    ( hypre_F90_Obj *solver,
@@ -1219,6 +1295,7 @@ hypre_F90_IFACE(hypre_boomeramgsetoverlap, HYPRE_BOOMERAMGSETOVERLAP)
            hypre_F90_PassInt (overlap) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetoverlap, HYPRE_BOOMERAMGGETOVERLAP)
    ( hypre_F90_Obj *solver,
@@ -1235,6 +1312,7 @@ hypre_F90_IFACE(hypre_boomeramggetoverlap, HYPRE_BOOMERAMGGETOVERLAP)
  * HYPRE_BoomerAMGSetDomainType, HYPRE_BoomerAMGGetDomainType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetdomaintype, HYPRE_BOOMERAMGSETDOMAINTYPE)
    ( hypre_F90_Obj *solver,
@@ -1247,6 +1325,7 @@ hypre_F90_IFACE(hypre_boomeramgsetdomaintype, HYPRE_BOOMERAMGSETDOMAINTYPE)
            hypre_F90_PassInt (domain_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetdomaintype, HYPRE_BOOMERAMGGETDOMAINTYPE)
    ( hypre_F90_Obj *solver,
@@ -1259,6 +1338,7 @@ hypre_F90_IFACE(hypre_boomeramggetdomaintype, HYPRE_BOOMERAMGGETDOMAINTYPE)
            hypre_F90_PassIntRef (domain_type) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetschwarznonsym, HYPRE_BOOMERAMGSETSCHWARZNONSYM)
    ( hypre_F90_Obj *solver,
@@ -1275,6 +1355,7 @@ hypre_F90_IFACE(hypre_boomeramgsetschwarznonsym, HYPRE_BOOMERAMGSETSCHWARZNONSYM
  * HYPRE_BoomerAMGSetSchwarzRlxWt, HYPRE_BoomerAMGGetSchwarzRlxWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetschwarzrlxwt, HYPRE_BOOMERAMGSETSCHWARZRLXWT)
    ( hypre_F90_Obj *solver,
@@ -1287,6 +1368,7 @@ hypre_F90_IFACE(hypre_boomeramgsetschwarzrlxwt, HYPRE_BOOMERAMGSETSCHWARZRLXWT)
            hypre_F90_PassReal (schwarz_rlx_weight)) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetschwarzrlxwt, HYPRE_BOOMERAMGGETSCHWARZRLXWT)
    ( hypre_F90_Obj *solver,
@@ -1303,6 +1385,7 @@ hypre_F90_IFACE(hypre_boomeramggetschwarzrlxwt, HYPRE_BOOMERAMGGETSCHWARZRLXWT)
  * HYPRE_BoomerAMGSetSym
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsym, HYPRE_BOOMERAMGSETSYM)
    ( hypre_F90_Obj *solver,
@@ -1319,6 +1402,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsym, HYPRE_BOOMERAMGSETSYM)
  * HYPRE_BoomerAMGSetLevel
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetlevel, HYPRE_BOOMERAMGSETLEVEL)
    ( hypre_F90_Obj *solver,
@@ -1335,6 +1419,7 @@ hypre_F90_IFACE(hypre_boomeramgsetlevel, HYPRE_BOOMERAMGSETLEVEL)
  * HYPRE_BoomerAMGSetThreshold
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetthreshold, HYPRE_BOOMERAMGSETTHRESHOLD)
    ( hypre_F90_Obj *solver,
@@ -1351,6 +1436,7 @@ hypre_F90_IFACE(hypre_boomeramgsetthreshold, HYPRE_BOOMERAMGSETTHRESHOLD)
  * HYPRE_BoomerAMGSetFilter
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetfilter, HYPRE_BOOMERAMGSETFILTER)
    ( hypre_F90_Obj *solver,
@@ -1367,6 +1453,7 @@ hypre_F90_IFACE(hypre_boomeramgsetfilter, HYPRE_BOOMERAMGSETFILTER)
  * HYPRE_BoomerAMGSetDropTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetdroptol, HYPRE_BOOMERAMGSETDROPTOL)
    ( hypre_F90_Obj *solver,
@@ -1383,6 +1470,7 @@ hypre_F90_IFACE(hypre_boomeramgsetdroptol, HYPRE_BOOMERAMGSETDROPTOL)
  * HYPRE_BoomerAMGSetMaxNzPerRow
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmaxnzperrow, HYPRE_BOOMERAMGSETMAXNZPERROW)
    ( hypre_F90_Obj *solver,
@@ -1399,6 +1487,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmaxnzperrow, HYPRE_BOOMERAMGSETMAXNZPERROW)
  * HYPRE_BoomerAMGSetEuBJ
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgseteubj, HYPRE_BOOMERAMGSETEUBJ)
    ( hypre_F90_Obj *solver,
@@ -1415,6 +1504,7 @@ hypre_F90_IFACE(hypre_boomeramgseteubj, HYPRE_BOOMERAMGSETEUBJ)
  * HYPRE_BoomerAMGSetEuLevel
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgseteulevel, HYPRE_BOOMERAMGSETEULEVEL)
    ( hypre_F90_Obj *solver,
@@ -1431,6 +1521,7 @@ hypre_F90_IFACE(hypre_boomeramgseteulevel, HYPRE_BOOMERAMGSETEULEVEL)
  * HYPRE_BoomerAMGSetEuSparseA
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgseteusparsea, HYPRE_BOOMERAMGSETEUSPARSEA)
    ( hypre_F90_Obj *solver,
@@ -1447,6 +1538,7 @@ hypre_F90_IFACE(hypre_boomeramgseteusparsea, HYPRE_BOOMERAMGSETEUSPARSEA)
  * HYPRE_BoomerAMGSetEuclidFile
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgseteuclidfile, HYPRE_BOOMERAMGSETEUCLIDFILE)
    ( hypre_F90_Obj *solver,
@@ -1462,6 +1554,7 @@ hypre_F90_IFACE(hypre_boomeramgseteuclidfile, HYPRE_BOOMERAMGSETEUCLIDFILE)
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetNumFunctions, HYPRE_BoomerAMGGetNumFunctions
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnumfunctions, HYPRE_BOOMERAMGSETNUMFUNCTIONS)
    ( hypre_F90_Obj *solver,
@@ -1474,6 +1567,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnumfunctions, HYPRE_BOOMERAMGSETNUMFUNCTIONS)
            hypre_F90_PassInt (num_functions) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetnumfunctions, HYPRE_BOOMERAMGGETNUMFUNCTIONS)
    ( hypre_F90_Obj *solver,
@@ -1489,6 +1583,7 @@ hypre_F90_IFACE(hypre_boomeramggetnumfunctions, HYPRE_BOOMERAMGGETNUMFUNCTIONS)
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetNodal
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnodal, HYPRE_BOOMERAMGSETNODAL)
    ( hypre_F90_Obj *solver,
@@ -1504,6 +1599,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnodal, HYPRE_BOOMERAMGSETNODAL)
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetNodalDiag
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnodaldiag, HYPRE_BOOMERAMGSETNODALDIAG)
    ( hypre_F90_Obj *solver,
@@ -1520,6 +1616,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnodaldiag, HYPRE_BOOMERAMGSETNODALDIAG)
  * HYPRE_BoomerAMGSetDofFunc
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetdoffunc, HYPRE_BOOMERAMGSETDOFFUNC)
    ( hypre_F90_Obj *solver,
@@ -1536,6 +1633,7 @@ hypre_F90_IFACE(hypre_boomeramgsetdoffunc, HYPRE_BOOMERAMGSETDOFFUNC)
  * HYPRE_BoomerAMGSetNumPaths
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnumpaths, HYPRE_BOOMERAMGSETNUMPATHS)
    ( hypre_F90_Obj *solver,
@@ -1552,6 +1650,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnumpaths, HYPRE_BOOMERAMGSETNUMPATHS)
  * HYPRE_BoomerAMGSetAggNumLevels
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaggnumlevels, HYPRE_BOOMERAMGSETAGGNUMLEVELS)
    ( hypre_F90_Obj *solver,
@@ -1570,6 +1669,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaggnumlevels, HYPRE_BOOMERAMGSETAGGNUMLEVELS)
  *--------------------------------------------------------------------------*/
 
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetagginterptype, HYPRE_BOOMERAMGSETAGGINTERPTYPE)
    ( hypre_F90_Obj *solver,
@@ -1585,6 +1685,7 @@ hypre_F90_IFACE(hypre_boomeramgsetagginterptype, HYPRE_BOOMERAMGSETAGGINTERPTYPE
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetAggTruncFactor
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaggtrfactor, HYPRE_BOOMERAMGSETAGGTRFACTOR)
    ( hypre_F90_Obj *solver,
@@ -1600,6 +1701,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaggtrfactor, HYPRE_BOOMERAMGSETAGGTRFACTOR)
 /*--------------------------------------------------------------------------
  * HYPRE_BoomerAMGSetAggP12TruncFactor
  *--------------------------------------------------------------------------*/
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaggp12trfac, HYPRE_BOOMERAMGSETAGGP12TRFAC)
    ( hypre_F90_Obj *solver,
@@ -1616,6 +1718,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaggp12trfac, HYPRE_BOOMERAMGSETAGGP12TRFAC)
  * HYPRE_BoomerAMGSetAggPMaxElmts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaggpmaxelmts, HYPRE_BOOMERAMGSETAGGPMAXELMTS)
    ( hypre_F90_Obj *solver,
@@ -1632,6 +1735,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaggpmaxelmts, HYPRE_BOOMERAMGSETAGGPMAXELMTS)
  * HYPRE_BoomerAMGSetAggP12MaxElmts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaggp12maxelmt, HYPRE_BOOMERAMGSETAGGP12MAXELMT)
    ( hypre_F90_Obj *solver,
@@ -1648,6 +1752,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaggp12maxelmt, HYPRE_BOOMERAMGSETAGGP12MAXELMT
  * HYPRE_BoomerAMGSetInterpVectors
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetinterpvecs, HYPRE_BOOMERAMGSETINTERPVECS)
    ( hypre_F90_Obj *solver,
@@ -1666,6 +1771,7 @@ hypre_F90_IFACE(hypre_boomeramgsetinterpvecs, HYPRE_BOOMERAMGSETINTERPVECS)
  * HYPRE_BoomerAMGSetInterpVecVariant
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetinterpvecvar, HYPRE_BOOMERAMGSETINTERPVECVAR)
    ( hypre_F90_Obj *solver,
@@ -1682,6 +1788,7 @@ hypre_F90_IFACE(hypre_boomeramgsetinterpvecvar, HYPRE_BOOMERAMGSETINTERPVECVAR)
  * HYPRE_BoomerAMGSetInterpVecQMax
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetinterpvecqmx, HYPRE_BOOMERAMGSETINTERPVECQMX)
    ( hypre_F90_Obj *solver,
@@ -1698,6 +1805,7 @@ hypre_F90_IFACE(hypre_boomeramgsetinterpvecqmx, HYPRE_BOOMERAMGSETINTERPVECQMX)
  * HYPRE_BoomerAMGSetInterpVecAbsQTrunc
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetinterpvecqtr, HYPRE_BOOMERAMGSETINTERPVECQTR)
    ( hypre_F90_Obj *solver,
@@ -1714,6 +1822,7 @@ hypre_F90_IFACE(hypre_boomeramgsetinterpvecqtr, HYPRE_BOOMERAMGSETINTERPVECQTR)
  * HYPRE_BoomerAMGSetChebyOrder
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetchebyorder, HYPRE_BOOMERAMGSETCHEBYORDER)
    ( hypre_F90_Obj *solver,
@@ -1730,6 +1839,7 @@ hypre_F90_IFACE(hypre_boomeramgsetchebyorder, HYPRE_BOOMERAMGSETCHEBYORDER)
  * HYPRE_BoomerAMGSetChebyFraction
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetchebyfract, HYPRE_BOOMERAMGSETCHEBYFRACT)
    ( hypre_F90_Obj *solver,
@@ -1746,6 +1856,7 @@ hypre_F90_IFACE(hypre_boomeramgsetchebyfract, HYPRE_BOOMERAMGSETCHEBYFRACT)
  * HYPRE_BoomerAMGSetChebyScale
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetchebyscale, HYPRE_BOOMERAMGSETCHEBYSCALE)
    ( hypre_F90_Obj *solver,
@@ -1762,6 +1873,7 @@ hypre_F90_IFACE(hypre_boomeramgsetchebyscale, HYPRE_BOOMERAMGSETCHEBYSCALE)
  * HYPRE_BoomerAMGSetChebyVariant
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetchebyvariant, HYPRE_BOOMERAMGSETCHEBYVARIANT)
    ( hypre_F90_Obj *solver,
@@ -1778,6 +1890,7 @@ hypre_F90_IFACE(hypre_boomeramgsetchebyvariant, HYPRE_BOOMERAMGSETCHEBYVARIANT)
  * HYPRE_BoomerAMGSetChebyEigEst
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetchebyeigest, HYPRE_BOOMERAMGSETCHEBYEIGEST)
    ( hypre_F90_Obj *solver,
@@ -1794,6 +1907,7 @@ hypre_F90_IFACE(hypre_boomeramgsetchebyeigest, HYPRE_BOOMERAMGSETCHEBYEIGEST)
  * HYPRE_BoomerAMGSetKeepTranspose
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetkeeptransp, HYPRE_BOOMERAMGSETKEEPTRANSP)
    ( hypre_F90_Obj *solver,
@@ -1810,6 +1924,7 @@ hypre_F90_IFACE(hypre_boomeramgsetkeeptransp, HYPRE_BOOMERAMGSETKEEPTRANSP)
  * HYPRE_BoomerAMGSetRAP2
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetrap2, HYPRE_BOOMERAMGSETRAP2)
    ( hypre_F90_Obj *solver,
@@ -1826,6 +1941,7 @@ hypre_F90_IFACE(hypre_boomeramgsetrap2, HYPRE_BOOMERAMGSETRAP2)
  * HYPRE_BoomerAMGSetAdditive, HYPRE_BoomerAMGGetAdditive
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetadditive, HYPRE_BOOMERAMGSETADDITIVE)
    ( hypre_F90_Obj *solver,
@@ -1838,6 +1954,7 @@ hypre_F90_IFACE(hypre_boomeramgsetadditive, HYPRE_BOOMERAMGSETADDITIVE)
            hypre_F90_PassInt (add_lvl) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetadditive, HYPRE_BOOMERAMGGETADDITIVE)
    ( hypre_F90_Obj *solver,
@@ -1854,6 +1971,7 @@ hypre_F90_IFACE(hypre_boomeramggetadditive, HYPRE_BOOMERAMGGETADDITIVE)
  * HYPRE_BoomerAMGSetMultAdditive, HYPRE BoomerAMGGetMultAdditive
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmultadd, HYPRE_BOOMERAMGSETMULTADD)
    ( hypre_F90_Obj *solver,
@@ -1866,6 +1984,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmultadd, HYPRE_BOOMERAMGSETMULTADD)
            hypre_F90_PassInt (add_lvl) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetmultadd, HYPRE_BOOMERAMGGETMULTADD)
    ( hypre_F90_Obj *solver,
@@ -1882,6 +2001,7 @@ hypre_F90_IFACE(hypre_boomeramggetmultadd, HYPRE_BOOMERAMGGETMULTADD)
  * HYPRE_BoomerAMGSetSimple, HYPRE_BoomerAMGGetSimple
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetsimple, HYPRE_BOOMERAMGSETSIMPLE)
    ( hypre_F90_Obj *solver,
@@ -1894,6 +2014,7 @@ hypre_F90_IFACE(hypre_boomeramgsetsimple, HYPRE_BOOMERAMGSETSIMPLE)
            hypre_F90_PassInt (add_lvl) ) );
 }
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramggetsimple, HYPRE_BOOMERAMGGETSIMPLE)
    ( hypre_F90_Obj *solver,
@@ -1910,6 +2031,7 @@ hypre_F90_IFACE(hypre_boomeramggetsimple, HYPRE_BOOMERAMGGETSIMPLE)
  * HYPRE_BoomerAMGSetAddLastLvl
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaddlastlvl, HYPRE_BOOMERAMGSETADDLASTLVL)
    ( hypre_F90_Obj *solver,
@@ -1926,6 +2048,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaddlastlvl, HYPRE_BOOMERAMGSETADDLASTLVL)
  * HYPRE_BoomerAMGSetMultAddTruncFactor
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmultaddtrf, HYPRE_BOOMERAMGSETMULTADDTRF)
    ( hypre_F90_Obj *solver,
@@ -1942,6 +2065,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmultaddtrf, HYPRE_BOOMERAMGSETMULTADDTRF)
  * HYPRE_BoomerAMGSetMultAddPMaxElmts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetmultaddpmx, HYPRE_BOOMERAMGSETMULTADDPMX)
    ( hypre_F90_Obj *solver,
@@ -1958,6 +2082,7 @@ hypre_F90_IFACE(hypre_boomeramgsetmultaddpmx, HYPRE_BOOMERAMGSETMULTADDPMX)
  * HYPRE_BoomerAMGSetAddRelaxType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaddrlxtype, HYPRE_BOOMERAMGSETADDRLXTYPE)
    ( hypre_F90_Obj *solver,
@@ -1974,6 +2099,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaddrlxtype, HYPRE_BOOMERAMGSETADDRLXTYPE)
  * HYPRE_BoomerAMGSetAddRelaxWt
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetaddrlxwt, HYPRE_BOOMERAMGSETADDRLXWT)
    ( hypre_F90_Obj *solver,
@@ -1990,6 +2116,7 @@ hypre_F90_IFACE(hypre_boomeramgsetaddrlxwt, HYPRE_BOOMERAMGSETADDRLXWT)
  * HYPRE_BoomerAMGSetSeqThreshold
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetseqthrshold, HYPRE_BOOMERAMGSETSEQTHRSHOLD)
    ( hypre_F90_Obj *solver,
@@ -2007,6 +2134,7 @@ hypre_F90_IFACE(hypre_boomeramgsetseqthrshold, HYPRE_BOOMERAMGSETSEQTHRSHOLD)
  * HYPRE_BoomerAMGSetDSLUThreshold
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetdsluthrshold, HYPRE_BOOMERAMGSETDSLUTHRSHOLD)
    ( hypre_F90_Obj *solver,
@@ -2024,6 +2152,7 @@ hypre_F90_IFACE(hypre_boomeramgsetdsluthrshold, HYPRE_BOOMERAMGSETDSLUTHRSHOLD)
  * HYPRE_BoomerAMGSetRedundant
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetredundant, HYPRE_BOOMERAMGSETREDUNDANT)
    ( hypre_F90_Obj *solver,
@@ -2040,6 +2169,7 @@ hypre_F90_IFACE(hypre_boomeramgsetredundant, HYPRE_BOOMERAMGSETREDUNDANT)
  * HYPRE_BoomerAMGSetNonGalerkinTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnongaltol, HYPRE_BOOMERAMGSETNONGALTOL)
    ( hypre_F90_Obj *solver,
@@ -2056,6 +2186,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnongaltol, HYPRE_BOOMERAMGSETNONGALTOL)
  * HYPRE_BoomerAMGSetLevelNonGalerkinTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetlvlnongaltol, HYPRE_BOOMERAMGSETLVLNONGALTOL)
    ( hypre_F90_Obj *solver,
@@ -2074,6 +2205,7 @@ hypre_F90_IFACE(hypre_boomeramgsetlvlnongaltol, HYPRE_BOOMERAMGSETLVLNONGALTOL)
  * HYPRE_BoomerAMGSetGSMG
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetgsmg, HYPRE_BOOMERAMGSETGSMG)
    ( hypre_F90_Obj *solver,
@@ -2090,6 +2222,7 @@ hypre_F90_IFACE(hypre_boomeramgsetgsmg, HYPRE_BOOMERAMGSETGSMG)
  * HYPRE_BoomerAMGSetNumSamples
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetnumsamples, HYPRE_BOOMERAMGSETNUMSAMPLES)
    ( hypre_F90_Obj *solver,
@@ -2106,6 +2239,7 @@ hypre_F90_IFACE(hypre_boomeramgsetnumsamples, HYPRE_BOOMERAMGSETNUMSAMPLES)
  * HYPRE_BoomerAMGSetCGCIts
  *--------------------------------------------------------------------------*/
                                                                     
+NTOP_DLL_EXPORT
 void
 hypre_F90_IFACE(hypre_boomeramgsetcgcits, HYPRE_BOOMERAMGSETCGCITS)
    ( hypre_F90_Obj *solver,

@@ -94,6 +94,7 @@ typedef HYPRE_Int (*HYPRE_PtrToModifyPCFcn)(HYPRE_Solver,
  * Prepare to solve the system.  The coefficient data in {\tt b} and {\tt x} is
  * ignored here, but information about the layout of the data may be used.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetup(HYPRE_Solver solver,
                    HYPRE_Matrix A,
                    HYPRE_Vector b,
@@ -102,6 +103,7 @@ HYPRE_Int HYPRE_PCGSetup(HYPRE_Solver solver,
 /**
  * Solve the system.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSolve(HYPRE_Solver solver,
                    HYPRE_Matrix A,
                    HYPRE_Vector b,
@@ -110,6 +112,7 @@ HYPRE_Int HYPRE_PCGSolve(HYPRE_Solver solver,
 /**
  * (Optional) Set the relative convergence tolerance.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetTol(HYPRE_Solver solver,
                     HYPRE_Real   tol);
 
@@ -120,6 +123,7 @@ HYPRE_Int HYPRE_PCGSetTol(HYPRE_Solver solver,
  * tolerance to 0.0.  (The default convergence test is $ <C*r,r> \leq$
  * max(relative$\_$tolerance$^{2} \ast <C*b, b>$, absolute$\_$tolerance$^2$).)
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetAbsoluteTol(HYPRE_Solver solver,
                             HYPRE_Real   a_tol);
 
@@ -129,32 +133,38 @@ HYPRE_Int HYPRE_PCGSetAbsoluteTol(HYPRE_Solver solver,
  * very low relative and/or absolute tolerances, in order to bail-out before
  * roundoff errors affect the approximation.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetResidualTol(HYPRE_Solver solver,
                             HYPRE_Real   rtol);
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetAbsoluteTolFactor(HYPRE_Solver solver, HYPRE_Real abstolf);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetConvergenceFactorTol(HYPRE_Solver solver, HYPRE_Real cf_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetStopCrit(HYPRE_Solver solver, HYPRE_Int stop_crit);
 
 /**
  * (Optional) Set maximum number of iterations.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetMaxIter(HYPRE_Solver solver,
                         HYPRE_Int          max_iter);
 
 /**
  * (Optional) Use the two-norm in stopping criteria.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetTwoNorm(HYPRE_Solver solver,
                         HYPRE_Int          two_norm);
 
@@ -162,24 +172,28 @@ HYPRE_Int HYPRE_PCGSetTwoNorm(HYPRE_Solver solver,
  * (Optional) Additionally require that the relative difference in
  * successive iterates be small.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRelChange(HYPRE_Solver solver,
                           HYPRE_Int          rel_change);
 
 /**
  * (Optional) Recompute the residual at the end to double-check convergence.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRecomputeResidual(HYPRE_Solver solver,
                                   HYPRE_Int          recompute_residual);
 
 /**
  * (Optional) Periodically recompute the residual while iterating.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRecomputeResidualP(HYPRE_Solver solver,
                                    HYPRE_Int          recompute_residual_p);
 
 /**
  * (Optional) Set the preconditioner to use.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetPrecond(HYPRE_Solver         solver,
                         HYPRE_PtrToSolverFcn precond,
                         HYPRE_PtrToSolverFcn precond_setup,
@@ -188,95 +202,113 @@ HYPRE_Int HYPRE_PCGSetPrecond(HYPRE_Solver         solver,
 /**
  * (Optional) Set the amount of logging to do.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetLogging(HYPRE_Solver solver,
                         HYPRE_Int          logging);
 
 /**
  * (Optional) Set the amount of printing to do to the screen.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetPrintLevel(HYPRE_Solver solver,
                            HYPRE_Int          level);
 
 /**
  * Return the number of iterations taken.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetNumIterations(HYPRE_Solver  solver,
                               HYPRE_Int          *num_iterations);
 
 /**
  * Return the norm of the final relative residual.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetFinalRelativeResidualNorm(HYPRE_Solver  solver,
                                           HYPRE_Real   *norm);
 
 /**
  * Return the residual.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetResidual(HYPRE_Solver  solver,
                          void        **residual);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetTol(HYPRE_Solver  solver,
                     HYPRE_Real   *tol);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetResidualTol(HYPRE_Solver  solver,
                             HYPRE_Real   *rtol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetAbsoluteTolFactor(HYPRE_Solver solver, HYPRE_Real *abstolf);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetConvergenceFactorTol(HYPRE_Solver solver, HYPRE_Real *cf_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetStopCrit(HYPRE_Solver solver, HYPRE_Int *stop_crit);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetMaxIter(HYPRE_Solver  solver,
                         HYPRE_Int          *max_iter);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetTwoNorm(HYPRE_Solver  solver,
                         HYPRE_Int          *two_norm);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetRelChange(HYPRE_Solver  solver,
                           HYPRE_Int          *rel_change);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_GMRESGetSkipRealResidualCheck(HYPRE_Solver solver,
                                               HYPRE_Int *skip_real_r_check);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetPrecond(HYPRE_Solver  solver,
                         HYPRE_Solver *precond_data_ptr);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetLogging(HYPRE_Solver  solver,
                         HYPRE_Int          *level);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetPrintLevel(HYPRE_Solver  solver,
                            HYPRE_Int          *level);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetConverged(HYPRE_Solver  solver,
                           HYPRE_Int          *converged);
 

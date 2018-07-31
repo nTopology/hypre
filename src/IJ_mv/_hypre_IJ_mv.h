@@ -417,25 +417,45 @@ HYPRE_Int hypre_IJVectorGetValuesPar ( hypre_IJVector *vector , HYPRE_Int num_va
 HYPRE_Int hypre_IJVectorAssembleOffProcValsPar ( hypre_IJVector *vector , HYPRE_Int max_off_proc_elmts , HYPRE_Int current_num_elmts , HYPRE_Int *off_proc_i , HYPRE_Complex *off_proc_data );
 
 /* HYPRE_IJMatrix.c */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixCreate ( MPI_Comm comm , HYPRE_Int ilower , HYPRE_Int iupper , HYPRE_Int jlower , HYPRE_Int jupper , HYPRE_IJMatrix *matrix );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixDestroy ( HYPRE_IJMatrix matrix );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixInitialize ( HYPRE_IJMatrix matrix );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetPrintLevel ( HYPRE_IJMatrix matrix , HYPRE_Int print_level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetValues ( HYPRE_IJMatrix matrix , HYPRE_Int nrows , HYPRE_Int *ncols , const HYPRE_Int *rows , const HYPRE_Int *cols , const HYPRE_Complex *values );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetConstantValues ( HYPRE_IJMatrix matrix , HYPRE_Complex value );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixAddToValues ( HYPRE_IJMatrix matrix , HYPRE_Int nrows , HYPRE_Int *ncols , const HYPRE_Int *rows , const HYPRE_Int *cols , const HYPRE_Complex *values );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixAssemble ( HYPRE_IJMatrix matrix );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetRowCounts ( HYPRE_IJMatrix matrix , HYPRE_Int nrows , HYPRE_Int *rows , HYPRE_Int *ncols );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetValues ( HYPRE_IJMatrix matrix , HYPRE_Int nrows , HYPRE_Int *ncols , HYPRE_Int *rows , HYPRE_Int *cols , HYPRE_Complex *values );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetObjectType ( HYPRE_IJMatrix matrix , HYPRE_Int type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetObjectType ( HYPRE_IJMatrix matrix , HYPRE_Int *type );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetLocalRange ( HYPRE_IJMatrix matrix , HYPRE_Int *ilower , HYPRE_Int *iupper , HYPRE_Int *jlower , HYPRE_Int *jupper );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetObject ( HYPRE_IJMatrix matrix , void **object );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetRowSizes ( HYPRE_IJMatrix matrix , const HYPRE_Int *sizes );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetDiagOffdSizes ( HYPRE_IJMatrix matrix , const HYPRE_Int *diag_sizes , const HYPRE_Int *offdiag_sizes );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetMaxOffProcElmts ( HYPRE_IJMatrix matrix , HYPRE_Int max_off_proc_elmts );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixRead ( const char *filename , MPI_Comm comm , HYPRE_Int type , HYPRE_IJMatrix *matrix_ptr );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixPrint ( HYPRE_IJMatrix matrix , const char *filename );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetOMPFlag ( HYPRE_IJMatrix matrix , HYPRE_Int omp_flag );
 
 /* HYPRE_IJVector.c */

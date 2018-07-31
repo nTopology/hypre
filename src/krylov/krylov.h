@@ -1346,39 +1346,73 @@ HYPRE_Int HYPRE_LGMRESGetFinalRelativeResidualNorm ( HYPRE_Solver solver , HYPRE
 HYPRE_Int HYPRE_LGMRESGetResidual ( HYPRE_Solver solver , void **residual );
 
 /* HYPRE_pcg.c */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetup ( HYPRE_Solver solver , HYPRE_Matrix A , HYPRE_Vector b , HYPRE_Vector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSolve ( HYPRE_Solver solver , HYPRE_Matrix A , HYPRE_Vector b , HYPRE_Vector x );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetTol ( HYPRE_Solver solver , HYPRE_Real tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetTol ( HYPRE_Solver solver , HYPRE_Real *tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetAbsoluteTol ( HYPRE_Solver solver , HYPRE_Real a_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetAbsoluteTol ( HYPRE_Solver solver , HYPRE_Real *a_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetAbsoluteTolFactor ( HYPRE_Solver solver , HYPRE_Real abstolf );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetAbsoluteTolFactor ( HYPRE_Solver solver , HYPRE_Real *abstolf );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetResidualTol ( HYPRE_Solver solver , HYPRE_Real rtol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetResidualTol ( HYPRE_Solver solver , HYPRE_Real *rtol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetConvergenceFactorTol ( HYPRE_Solver solver , HYPRE_Real cf_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetConvergenceFactorTol ( HYPRE_Solver solver , HYPRE_Real *cf_tol );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetMaxIter ( HYPRE_Solver solver , HYPRE_Int max_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetMaxIter ( HYPRE_Solver solver , HYPRE_Int *max_iter );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetStopCrit ( HYPRE_Solver solver , HYPRE_Int stop_crit );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetStopCrit ( HYPRE_Solver solver , HYPRE_Int *stop_crit );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetTwoNorm ( HYPRE_Solver solver , HYPRE_Int two_norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetTwoNorm ( HYPRE_Solver solver , HYPRE_Int *two_norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRelChange ( HYPRE_Solver solver , HYPRE_Int rel_change );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetRelChange ( HYPRE_Solver solver , HYPRE_Int *rel_change );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRecomputeResidual ( HYPRE_Solver solver , HYPRE_Int recompute_residual );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetRecomputeResidual ( HYPRE_Solver solver , HYPRE_Int *recompute_residual );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetRecomputeResidualP ( HYPRE_Solver solver , HYPRE_Int recompute_residual_p );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetRecomputeResidualP ( HYPRE_Solver solver , HYPRE_Int *recompute_residual_p );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetPrecond ( HYPRE_Solver solver , HYPRE_PtrToSolverFcn precond , HYPRE_PtrToSolverFcn precond_setup , HYPRE_Solver precond_solver );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetPrecond ( HYPRE_Solver solver , HYPRE_Solver *precond_data_ptr );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetLogging ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetLogging ( HYPRE_Solver solver , HYPRE_Int *level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetPrintLevel ( HYPRE_Solver solver , HYPRE_Int level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetPrintLevel ( HYPRE_Solver solver , HYPRE_Int *level );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetNumIterations ( HYPRE_Solver solver , HYPRE_Int *num_iterations );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetConverged ( HYPRE_Solver solver , HYPRE_Int *converged );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetFinalRelativeResidualNorm ( HYPRE_Solver solver , HYPRE_Real *norm );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetResidual ( HYPRE_Solver solver , void **residual );
 
 /* pcg.c */

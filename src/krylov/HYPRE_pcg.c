@@ -30,6 +30,7 @@
  * HYPRE_PCGSetup
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_PCGSetup( HYPRE_Solver solver,
                 HYPRE_Matrix A,
@@ -46,6 +47,7 @@ HYPRE_PCGSetup( HYPRE_Solver solver,
  * HYPRE_PCGSolve
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_PCGSolve( HYPRE_Solver solver,
                 HYPRE_Matrix A,
@@ -62,6 +64,7 @@ HYPRE_PCGSolve( HYPRE_Solver solver,
  * HYPRE_PCGSetTol, HYPRE_PCGGetTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetTol( HYPRE_Solver solver,
                  HYPRE_Real   tol )
@@ -69,6 +72,7 @@ HYPRE_PCGSetTol( HYPRE_Solver solver,
    return( hypre_PCGSetTol( (void *) solver, tol ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetTol( HYPRE_Solver  solver,
                  HYPRE_Real   *tol )
@@ -79,6 +83,7 @@ HYPRE_PCGGetTol( HYPRE_Solver  solver,
  * HYPRE_PCGSetAbsoluteTol, HYPRE_PCGGetAbsoluteTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetAbsoluteTol( HYPRE_Solver solver,
                          HYPRE_Real   a_tol )
@@ -86,6 +91,7 @@ HYPRE_PCGSetAbsoluteTol( HYPRE_Solver solver,
    return( hypre_PCGSetAbsoluteTol( (void *) solver, a_tol ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetAbsoluteTol( HYPRE_Solver  solver,
                          HYPRE_Real   *a_tol )
@@ -97,6 +103,7 @@ HYPRE_PCGGetAbsoluteTol( HYPRE_Solver  solver,
  * HYPRE_PCGSetResidualTol, HYPRE_PCGGetResidualTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetResidualTol( HYPRE_Solver solver,
                          HYPRE_Real   rtol )
@@ -104,6 +111,7 @@ HYPRE_PCGSetResidualTol( HYPRE_Solver solver,
    return( hypre_PCGSetResidualTol( (void *) solver, rtol ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetResidualTol( HYPRE_Solver  solver,
                          HYPRE_Real   *rtol )
@@ -115,6 +123,7 @@ HYPRE_PCGGetResidualTol( HYPRE_Solver  solver,
  * HYPRE_PCGSetAbsoluteTolFactor, HYPRE_PCGGetAbsoluteTolFactor
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetAbsoluteTolFactor( HYPRE_Solver solver,
                                HYPRE_Real   abstolf )
@@ -122,6 +131,7 @@ HYPRE_PCGSetAbsoluteTolFactor( HYPRE_Solver solver,
    return( hypre_PCGSetAbsoluteTolFactor( (void *) solver, abstolf ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetAbsoluteTolFactor( HYPRE_Solver  solver,
                                HYPRE_Real   *abstolf )
@@ -133,6 +143,7 @@ HYPRE_PCGGetAbsoluteTolFactor( HYPRE_Solver  solver,
  * HYPRE_PCGSetConvergenceFactorTol, HYPRE_PCGGetConvergenceFactorTol
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetConvergenceFactorTol( HYPRE_Solver solver,
                                   HYPRE_Real   cf_tol )
@@ -141,6 +152,7 @@ HYPRE_PCGSetConvergenceFactorTol( HYPRE_Solver solver,
                                             cf_tol );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetConvergenceFactorTol( HYPRE_Solver  solver,
                                   HYPRE_Real   *cf_tol )
@@ -153,6 +165,7 @@ HYPRE_PCGGetConvergenceFactorTol( HYPRE_Solver  solver,
  * HYPRE_PCGSetMaxIter, HYPRE_PCGGetMaxIter
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetMaxIter( HYPRE_Solver solver,
                      HYPRE_Int    max_iter )
@@ -160,6 +173,7 @@ HYPRE_PCGSetMaxIter( HYPRE_Solver solver,
    return( hypre_PCGSetMaxIter( (void *) solver, max_iter ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetMaxIter( HYPRE_Solver  solver,
                      HYPRE_Int    *max_iter )
@@ -171,6 +185,7 @@ HYPRE_PCGGetMaxIter( HYPRE_Solver  solver,
  * HYPRE_PCGSetStopCrit, HYPRE_PCGGetStopCrit
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetStopCrit( HYPRE_Solver solver,
                       HYPRE_Int    stop_crit )
@@ -178,6 +193,7 @@ HYPRE_PCGSetStopCrit( HYPRE_Solver solver,
    return( hypre_PCGSetStopCrit( (void *) solver, stop_crit ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetStopCrit( HYPRE_Solver  solver,
                       HYPRE_Int    *stop_crit )
@@ -189,6 +205,7 @@ HYPRE_PCGGetStopCrit( HYPRE_Solver  solver,
  * HYPRE_PCGSetTwoNorm, HYPRE_PCGGetTwoNorm
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetTwoNorm( HYPRE_Solver solver,
                      HYPRE_Int    two_norm )
@@ -196,6 +213,7 @@ HYPRE_PCGSetTwoNorm( HYPRE_Solver solver,
    return( hypre_PCGSetTwoNorm( (void *) solver, two_norm ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetTwoNorm( HYPRE_Solver  solver,
                      HYPRE_Int    *two_norm )
@@ -207,6 +225,7 @@ HYPRE_PCGGetTwoNorm( HYPRE_Solver  solver,
  * HYPRE_PCGSetRelChange, HYPRE_PCGGetRelChange
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetRelChange( HYPRE_Solver solver,
                        HYPRE_Int    rel_change )
@@ -214,6 +233,7 @@ HYPRE_PCGSetRelChange( HYPRE_Solver solver,
    return( hypre_PCGSetRelChange( (void *) solver, rel_change ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetRelChange( HYPRE_Solver  solver,
                        HYPRE_Int    *rel_change )
@@ -225,6 +245,7 @@ HYPRE_PCGGetRelChange( HYPRE_Solver  solver,
  * HYPRE_PCGSetRecomputeResidual, HYPRE_PCGGetRecomputeResidual
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetRecomputeResidual( HYPRE_Solver solver,
                                HYPRE_Int    recompute_residual )
@@ -232,6 +253,7 @@ HYPRE_PCGSetRecomputeResidual( HYPRE_Solver solver,
    return( hypre_PCGSetRecomputeResidual( (void *) solver, recompute_residual ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetRecomputeResidual( HYPRE_Solver  solver,
                                HYPRE_Int    *recompute_residual )
@@ -243,6 +265,7 @@ HYPRE_PCGGetRecomputeResidual( HYPRE_Solver  solver,
  * HYPRE_PCGSetRecomputeResidualP, HYPRE_PCGGetRecomputeResidualP
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetRecomputeResidualP( HYPRE_Solver solver,
                                 HYPRE_Int    recompute_residual_p )
@@ -250,6 +273,7 @@ HYPRE_PCGSetRecomputeResidualP( HYPRE_Solver solver,
    return( hypre_PCGSetRecomputeResidualP( (void *) solver, recompute_residual_p ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetRecomputeResidualP( HYPRE_Solver  solver,
                                 HYPRE_Int    *recompute_residual_p )
@@ -261,6 +285,7 @@ HYPRE_PCGGetRecomputeResidualP( HYPRE_Solver  solver,
  * HYPRE_PCGSetPrecond
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetPrecond( HYPRE_Solver         solver,
                      HYPRE_PtrToSolverFcn precond,
@@ -277,6 +302,7 @@ HYPRE_PCGSetPrecond( HYPRE_Solver         solver,
  * HYPRE_PCGGetPrecond
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetPrecond( HYPRE_Solver  solver,
                      HYPRE_Solver *precond_data_ptr )
@@ -291,6 +317,7 @@ HYPRE_PCGGetPrecond( HYPRE_Solver  solver,
  * Soon the SetPrintLevel call should be deleted.
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetLogging( HYPRE_Solver solver,
                      HYPRE_Int    level )
@@ -298,6 +325,7 @@ HYPRE_PCGSetLogging( HYPRE_Solver solver,
    return ( hypre_PCGSetLogging( (void *) solver, level ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetLogging( HYPRE_Solver solver,
                      HYPRE_Int        * level )
@@ -309,6 +337,7 @@ HYPRE_PCGGetLogging( HYPRE_Solver solver,
  * HYPRE_PCGSetPrintLevel, HYPRE_PCGGetPrintLevel
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGSetPrintLevel( HYPRE_Solver solver,
                         HYPRE_Int    level )
@@ -316,6 +345,7 @@ HYPRE_PCGSetPrintLevel( HYPRE_Solver solver,
    return( hypre_PCGSetPrintLevel( (void *) solver, level ) );
 }
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetPrintLevel( HYPRE_Solver  solver,
                         HYPRE_Int    *level )
@@ -327,6 +357,7 @@ HYPRE_PCGGetPrintLevel( HYPRE_Solver  solver,
  * HYPRE_PCGGetNumIterations
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetNumIterations( HYPRE_Solver  solver,
                            HYPRE_Int    *num_iterations )
@@ -338,6 +369,7 @@ HYPRE_PCGGetNumIterations( HYPRE_Solver  solver,
  * HYPRE_PCGGetConverged
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetConverged( HYPRE_Solver  solver,
                        HYPRE_Int    *converged )
@@ -349,6 +381,7 @@ HYPRE_PCGGetConverged( HYPRE_Solver  solver,
  * HYPRE_PCGGetFinalRelativeResidualNorm
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_PCGGetFinalRelativeResidualNorm( HYPRE_Solver  solver,
                                        HYPRE_Real   *norm )
@@ -360,6 +393,7 @@ HYPRE_PCGGetFinalRelativeResidualNorm( HYPRE_Solver  solver,
  * HYPRE_PCGGetResidual
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGGetResidual( HYPRE_Solver   solver,
                                 void         **residual )
 {

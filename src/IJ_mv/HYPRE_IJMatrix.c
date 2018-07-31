@@ -24,6 +24,7 @@
  * HYPRE_IJMatrixCreate
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_IJMatrixCreate( MPI_Comm        comm,
                       HYPRE_Int       ilower,
@@ -231,6 +232,7 @@ HYPRE_IJMatrixCreate( MPI_Comm        comm,
  * HYPRE_IJMatrixDestroy
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixDestroy( HYPRE_IJMatrix matrix )
 {
@@ -272,6 +274,7 @@ HYPRE_IJMatrixDestroy( HYPRE_IJMatrix matrix )
  * HYPRE_IJMatrixInitialize
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixInitialize( HYPRE_IJMatrix matrix )
 {
@@ -298,6 +301,7 @@ HYPRE_IJMatrixInitialize( HYPRE_IJMatrix matrix )
  * HYPRE_IJMatrixSetPrintLevel
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetPrintLevel( HYPRE_IJMatrix matrix,
                              HYPRE_Int print_level )
@@ -318,6 +322,7 @@ HYPRE_IJMatrixSetPrintLevel( HYPRE_IJMatrix matrix,
  * HYPRE_IJMatrixSetValues
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetValues( HYPRE_IJMatrix       matrix,
                          HYPRE_Int            nrows,
@@ -389,6 +394,7 @@ HYPRE_IJMatrixSetValues( HYPRE_IJMatrix       matrix,
  * HYPRE_IJMatrixSetConstantValues
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_IJMatrixSetConstantValues( HYPRE_IJMatrix matrix, HYPRE_Complex value)
 {
@@ -416,6 +422,7 @@ HYPRE_IJMatrixSetConstantValues( HYPRE_IJMatrix matrix, HYPRE_Complex value)
  * HYPRE_IJMatrixAddToValues
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixAddToValues( HYPRE_IJMatrix       matrix,
                            HYPRE_Int            nrows,
@@ -486,6 +493,7 @@ HYPRE_IJMatrixAddToValues( HYPRE_IJMatrix       matrix,
  * HYPRE_IJMatrixAssemble
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixAssemble( HYPRE_IJMatrix matrix )
 {
@@ -513,6 +521,7 @@ HYPRE_IJMatrixAssemble( HYPRE_IJMatrix matrix )
  * HYPRE_IJMatrixGetRowCounts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixGetRowCounts( HYPRE_IJMatrix matrix,
                             HYPRE_Int      nrows, 
@@ -563,6 +572,7 @@ HYPRE_IJMatrixGetRowCounts( HYPRE_IJMatrix matrix,
  * HYPRE_IJMatrixGetValues
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixGetValues( HYPRE_IJMatrix matrix,
                          HYPRE_Int      nrows,
@@ -623,6 +633,7 @@ HYPRE_IJMatrixGetValues( HYPRE_IJMatrix matrix,
  * HYPRE_IJMatrixSetObjectType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetObjectType( HYPRE_IJMatrix matrix,
                              HYPRE_Int      type )
@@ -644,6 +655,7 @@ HYPRE_IJMatrixSetObjectType( HYPRE_IJMatrix matrix,
  * HYPRE_IJMatrixGetObjectType
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixGetObjectType( HYPRE_IJMatrix  matrix,
                              HYPRE_Int      *type )
@@ -664,6 +676,7 @@ HYPRE_IJMatrixGetObjectType( HYPRE_IJMatrix  matrix,
  * HYPRE_IJMatrixGetLocalRange
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixGetLocalRange( HYPRE_IJMatrix  matrix,
                              HYPRE_Int      *ilower,
@@ -718,6 +731,7 @@ work with a direct implementation of IJMatrix.
 The ijmatrix to be pointed to.
 */
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_IJMatrixGetObject( HYPRE_IJMatrix   matrix,
                          void           **object )
@@ -739,6 +753,7 @@ HYPRE_IJMatrixGetObject( HYPRE_IJMatrix   matrix,
  * HYPRE_IJMatrixSetRowSizes
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetRowSizes( HYPRE_IJMatrix   matrix,
                            const HYPRE_Int *sizes )
@@ -768,6 +783,7 @@ HYPRE_IJMatrixSetRowSizes( HYPRE_IJMatrix   matrix,
  * HYPRE_IJMatrixSetDiagOffdSizes
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetDiagOffdSizes( HYPRE_IJMatrix   matrix, 
 				const HYPRE_Int *diag_sizes,
@@ -797,6 +813,7 @@ HYPRE_IJMatrixSetDiagOffdSizes( HYPRE_IJMatrix   matrix,
  * HYPRE_IJMatrixSetMaxOffProcElmts
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetMaxOffProcElmts( HYPRE_IJMatrix matrix, 
 				  HYPRE_Int      max_off_proc_elmts)
@@ -826,6 +843,7 @@ HYPRE_IJMatrixSetMaxOffProcElmts( HYPRE_IJMatrix matrix,
  * HYPRE_IJMatrixRead
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixRead( const char     *filename,
                     MPI_Comm        comm,
@@ -885,6 +903,7 @@ HYPRE_IJMatrixRead( const char     *filename,
  * HYPRE_IJMatrixPrint
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixPrint( HYPRE_IJMatrix  matrix,
                      const char     *filename )
@@ -990,6 +1009,7 @@ HYPRE_IJMatrixPrint( HYPRE_IJMatrix  matrix,
  * HYPRE_IJMatrixSetOMPFlag
  *--------------------------------------------------------------------------*/
 
+NTOP_DLL_EXPORT
 HYPRE_Int 
 HYPRE_IJMatrixSetOMPFlag( HYPRE_IJMatrix matrix,
                           HYPRE_Int      omp_flag )

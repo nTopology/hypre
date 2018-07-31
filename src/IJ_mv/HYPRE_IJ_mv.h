@@ -68,6 +68,7 @@ typedef struct hypre_IJMatrix_struct *HYPRE_IJMatrix;
  *
  * Collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixCreate(MPI_Comm        comm,
                                HYPRE_Int       ilower,
                                HYPRE_Int       iupper,
@@ -84,6 +85,7 @@ HYPRE_Int HYPRE_IJMatrixCreate(MPI_Comm        comm,
  * references to the object.  The object will then be destroyed when
  * all internal reference counts go to zero.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixDestroy(HYPRE_IJMatrix matrix);
 
 /**
@@ -91,6 +93,7 @@ HYPRE_Int HYPRE_IJMatrixDestroy(HYPRE_IJMatrix matrix);
  * routine will also re-initialize an already assembled matrix,
  * allowing users to modify coefficient values.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixInitialize(HYPRE_IJMatrix matrix);
 
 /**
@@ -119,6 +122,7 @@ HYPRE_Int HYPRE_IJMatrixInitialize(HYPRE_IJMatrix matrix);
  * Not collective.
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetValues(HYPRE_IJMatrix       matrix,
                                   HYPRE_Int            nrows,
                                   HYPRE_Int           *ncols,
@@ -130,6 +134,7 @@ HYPRE_Int HYPRE_IJMatrixSetValues(HYPRE_IJMatrix       matrix,
  * Sets all  matrix coefficients of an already assembled matrix to
  * {\tt value}
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetConstantValues(HYPRE_IJMatrix       matrix,
                                           HYPRE_Complex value);
 
@@ -150,6 +155,7 @@ HYPRE_Int HYPRE_IJMatrixSetConstantValues(HYPRE_IJMatrix       matrix,
  * Not collective.
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixAddToValues(HYPRE_IJMatrix       matrix,
                                     HYPRE_Int            nrows,
                                     HYPRE_Int           *ncols,
@@ -160,6 +166,7 @@ HYPRE_Int HYPRE_IJMatrixAddToValues(HYPRE_IJMatrix       matrix,
 /**
  * Finalize the construction of the matrix before using.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixAssemble(HYPRE_IJMatrix matrix);
 
 /**
@@ -167,6 +174,7 @@ HYPRE_Int HYPRE_IJMatrixAssemble(HYPRE_IJMatrix matrix);
  * and returns them in {\tt ncols}, which needs to be allocated by the
  * user.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetRowCounts(HYPRE_IJMatrix  matrix,
                                      HYPRE_Int       nrows,
                                      HYPRE_Int      *rows,
@@ -180,6 +188,7 @@ HYPRE_Int HYPRE_IJMatrixGetRowCounts(HYPRE_IJMatrix  matrix,
  * the column_indices and matrix coefficients of the
  * (-nrows) rows contained in rows.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetValues(HYPRE_IJMatrix  matrix,
                                   HYPRE_Int       nrows,
                                   HYPRE_Int      *ncols,
@@ -195,12 +204,14 @@ HYPRE_Int HYPRE_IJMatrixGetValues(HYPRE_IJMatrix  matrix,
  *
  * @see HYPRE_IJMatrixGetObject
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetObjectType(HYPRE_IJMatrix matrix,
                                       HYPRE_Int      type);
 
 /**
  * Get the storage type of the constructed matrix object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetObjectType(HYPRE_IJMatrix  matrix,
                                       HYPRE_Int      *type);
 
@@ -208,6 +219,7 @@ HYPRE_Int HYPRE_IJMatrixGetObjectType(HYPRE_IJMatrix  matrix,
  * Gets range of rows owned by this processor and range
  * of column partitioning for this processor.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetLocalRange(HYPRE_IJMatrix  matrix,
                                       HYPRE_Int      *ilower,
                                       HYPRE_Int      *iupper,
@@ -219,6 +231,7 @@ HYPRE_Int HYPRE_IJMatrixGetLocalRange(HYPRE_IJMatrix  matrix,
  *
  * @see HYPRE_IJMatrixSetObjectType
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixGetObject(HYPRE_IJMatrix   matrix,
                                   void           **object);
 
@@ -230,6 +243,7 @@ HYPRE_Int HYPRE_IJMatrixGetObject(HYPRE_IJMatrix   matrix,
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetRowSizes(HYPRE_IJMatrix   matrix,
                                     const HYPRE_Int *sizes);
 
@@ -245,6 +259,7 @@ HYPRE_Int HYPRE_IJMatrixSetRowSizes(HYPRE_IJMatrix   matrix,
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetDiagOffdSizes(HYPRE_IJMatrix   matrix,
                                          const HYPRE_Int *diag_sizes,
                                          const HYPRE_Int *offdiag_sizes);
@@ -257,6 +272,7 @@ HYPRE_Int HYPRE_IJMatrixSetDiagOffdSizes(HYPRE_IJMatrix   matrix,
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetMaxOffProcElmts(HYPRE_IJMatrix matrix,
                                            HYPRE_Int      max_off_proc_elmts);
 
@@ -265,6 +281,7 @@ HYPRE_Int HYPRE_IJMatrixSetMaxOffProcElmts(HYPRE_IJMatrix matrix,
  * error messages. The default is 0, i.e. no error messages are printed.
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetPrintLevel(HYPRE_IJMatrix matrix,
                                       HYPRE_Int      print_level);
 
@@ -283,12 +300,14 @@ HYPRE_Int HYPRE_IJMatrixSetPrintLevel(HYPRE_IJMatrix matrix,
  * if values are added to off processor values.
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixSetOMPFlag(HYPRE_IJMatrix matrix,
                                    HYPRE_Int      omp_flag);
 
 /**
  * Read the matrix from file.  This is mainly for debugging purposes.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixRead(const char     *filename,
                              MPI_Comm        comm,
                              HYPRE_Int       type,
@@ -297,6 +316,7 @@ HYPRE_Int HYPRE_IJMatrixRead(const char     *filename,
 /**
  * Print the matrix to file.  This is mainly for debugging purposes.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJMatrixPrint(HYPRE_IJMatrix  matrix,
                               const char     *filename);
 
@@ -327,6 +347,7 @@ typedef struct hypre_IJVector_struct *HYPRE_IJVector;
  *
  * Collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorCreate(MPI_Comm        comm,
                                HYPRE_Int       jlower,
                                HYPRE_Int       jupper,
@@ -341,6 +362,7 @@ HYPRE_Int HYPRE_IJVectorCreate(MPI_Comm        comm,
  * references to the object.  The object will then be destroyed when
  * all internal reference counts go to zero.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorDestroy(HYPRE_IJVector vector);
 
 /**
@@ -348,6 +370,7 @@ HYPRE_Int HYPRE_IJVectorDestroy(HYPRE_IJVector vector);
  * routine will also re-initialize an already assembled vector,
  * allowing users to modify coefficient values.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorInitialize(HYPRE_IJVector vector);
 
 /**
@@ -358,6 +381,7 @@ HYPRE_Int HYPRE_IJVectorInitialize(HYPRE_IJVector vector);
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorSetMaxOffProcElmts(HYPRE_IJVector vector,
                                            HYPRE_Int      max_off_proc_elmts);
 
@@ -374,6 +398,7 @@ HYPRE_Int HYPRE_IJVectorSetMaxOffProcElmts(HYPRE_IJVector vector,
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorSetValues(HYPRE_IJVector       vector,
                                   HYPRE_Int            nvalues,
                                   const HYPRE_Int     *indices,
@@ -388,6 +413,7 @@ HYPRE_Int HYPRE_IJVectorSetValues(HYPRE_IJVector       vector,
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorAddToValues(HYPRE_IJVector       vector,
                                     HYPRE_Int            nvalues,
                                     const HYPRE_Int     *indices,
@@ -396,6 +422,7 @@ HYPRE_Int HYPRE_IJVectorAddToValues(HYPRE_IJVector       vector,
 /**
  * Finalize the construction of the vector before using.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorAssemble(HYPRE_IJVector vector);
 
 /**
@@ -404,6 +431,7 @@ HYPRE_Int HYPRE_IJVectorAssemble(HYPRE_IJVector vector);
  *
  * Not collective.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorGetValues(HYPRE_IJVector   vector,
                                   HYPRE_Int        nvalues,
                                   const HYPRE_Int *indices,
@@ -417,18 +445,21 @@ HYPRE_Int HYPRE_IJVectorGetValues(HYPRE_IJVector   vector,
  *
  * @see HYPRE_IJVectorGetObject
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorSetObjectType(HYPRE_IJVector vector,
                                       HYPRE_Int      type);
 
 /**
  * Get the storage type of the constructed vector object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorGetObjectType(HYPRE_IJVector  vector,
                                       HYPRE_Int      *type);
 
 /**
  * Returns range of the part of the vector owned by this processor.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorGetLocalRange(HYPRE_IJVector  vector,
                                       HYPRE_Int      *jlower,
                                       HYPRE_Int      *jupper);
@@ -438,6 +469,7 @@ HYPRE_Int HYPRE_IJVectorGetLocalRange(HYPRE_IJVector  vector,
  *
  * @see HYPRE_IJVectorSetObjectType
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorGetObject(HYPRE_IJVector   vector,
                                   void           **object);
 
@@ -446,12 +478,14 @@ HYPRE_Int HYPRE_IJVectorGetObject(HYPRE_IJVector   vector,
  * error messages. The default is 0, i.e. no error messages are printed.
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorSetPrintLevel(HYPRE_IJVector vector,
                                       HYPRE_Int      print_level);
 
 /**
  * Read the vector from file.  This is mainly for debugging purposes.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorRead(const char     *filename,
                              MPI_Comm        comm,
                              HYPRE_Int       type,
@@ -460,6 +494,7 @@ HYPRE_Int HYPRE_IJVectorRead(const char     *filename,
 /**
  * Print the vector to file.  This is mainly for debugging purposes.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_IJVectorPrint(HYPRE_IJVector  vector,
                               const char     *filename);
 

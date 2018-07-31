@@ -29,6 +29,9 @@
 #include <omp.h>
 #endif
 
+#define NTOP_DLL_EXPORT __declspec( dllexport )  
+#define NTOP_DLL_IMPORT __declspec( dllimport )  
+
 #ifdef __cplusplus
 extern "C" {
 #endif
