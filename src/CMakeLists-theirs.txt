@@ -1,12 +1,81 @@
-#cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required (VERSION 2.8.8)
+project (hypre)
 
-### Sources ###
-    
+# The version number.
+set (HYPRE_VERSION 2.14.0)
+set (HYPRE_DATE    2018/03/16)
+set (HYPRE_TIME    00:00:00)
+set (HYPRE_BUGS    hypre-support@llnl.gov)
+set (HYPRE_SRCDIR  "${PROJECT_SOURCE_DIR}")
+
+if (${hypre_SOURCE_DIR} STREQUAL ${hypre_BINARY_DIR})
+  message(FATAL_ERROR "In-place build not allowed! Please use a separate build directory. See the Users Manual or INSTALL file for details.")
+endif ()
+
+# Set default installation directory, but provide a means for users to change
+set (HYPRE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/hypre" CACHE PATH
+  "Installation directory for HYPRE")
+set (CMAKE_INSTALL_PREFIX "${HYPRE_INSTALL_PREFIX}" CACHE INTERNAL "" FORCE)
+
+# Set default compile optimization flag
+set (HYPRE_BUILD_TYPE "Release" CACHE STRING
+  "Optimization flags: set to Debug, Release, RelWithDebInfo, or MinSizeRel")
+set (CMAKE_BUILD_TYPE "${HYPRE_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
+
+# Configuration options
+option(HYPRE_SHARED               "Build a shared library" OFF)
+option(HYPRE_BIGINT               "Use long long int for HYPRE_Int" OFF)
+option(HYPRE_SINGLE               "Use float for HYPRE_Real" OFF)
+option(HYPRE_LONG_DOUBLE          "Use long double for HYPRE_Real" OFF)
+option(HYPRE_SEQUENTIAL           "Compile without MPI" OFF)
+option(HYPRE_TIMING               "Use HYPRE timing routines" OFF)
+option(HYPRE_USING_HYPRE_BLAS     "Use internal BLAS library" ON)
+option(HYPRE_USING_HYPRE_LAPACK   "Use internal LAPACK library" ON)
+option(HYPRE_NO_GLOBAL_PARTITION  "Use assumed partition" ON)
+option(HYPRE_PRINT_ERRORS         "Print HYPRE errors" OFF)
+option(HYPRE_USING_OPENMP         "Use OpenMP" OFF)
+option(HYPRE_USING_FEI            "Use FEI" ON)
+option(HYPRE_USING_CALIPER        "Use Caliper" OFF)  # TODO: Finish this cmake feature
+
+if (HYPRE_SHARED)
+  # FEI doesn't currently compile with shared
+  set (HYPRE_USING_FEI OFF CACHE BOOL "" FORCE)
+endif ()
+
+if (HYPRE_BIGINT)
+  set (HYPRE_USING_FEI OFF CACHE BOOL "" FORCE)
+endif ()
+
+if (HYPRE_SINGLE)
+  set (HYPRE_USING_FEI OFF CACHE BOOL "" FORCE)
+endif ()
+
+if (HYPRE_LONG_DOUBLE)
+  set (HYPRE_USING_FEI OFF CACHE BOOL "" FORCE)
+endif ()
+
+if (HYPRE_SEQUENTIAL)
+  set (HYPRE_NO_GLOBAL_PARTITION OFF CACHE BOOL "" FORCE)
+endif ()
+
+#   --with-examples         Build example codes.
+#   --with-fei              Use internal FEI routines.
+#   --with-superlu          Use internal SuperLU routines.
+#   --with-mli              Use MLI
+
+# Headers and sources
+set (HYPRE_HEADERS "")
+set (HYPRE_SOURCES "")
+
 # Headers and sources: .
-list(APPEND sources
-  cmbuild/HYPRE_config.h
+list (APPEND HYPRE_HEADERS
+  "${PROJECT_BINARY_DIR}/HYPRE_config.h"
   HYPREf.h
   HYPRE.h
+)
+
+# Headers and sources: blas
+list (APPEND HYPRE_SOURCES
   blas/dasum.c
   blas/daxpy.c
   blas/dcopy.c
@@ -31,6 +100,10 @@ list(APPEND sources
   blas/idamax.c
   blas/lsame.c
   blas/xerbla.c
+)
+
+# Headers and sources: lapack
+list (APPEND HYPRE_SOURCES
   lapack/dbdsqr.c
   lapack/dgebd2.c
   lapack/dgebrd.c
@@ -104,12 +177,18 @@ list(APPEND sources
   lapack/ilaenv.c
   lapack/lsame.c
   lapack/xerbla.c
+)
+
+# Headers and sources: utilities
+list (APPEND HYPRE_HEADERS
   utilities/HYPRE_utilities.h
   utilities/_hypre_utilities.h
   utilities/hypre_hopscotch_hash.h
   utilities/HYPRE_error_f.h
   utilities/fortran.h
   utilities/fortran_matrix.h
+)
+list (APPEND HYPRE_SOURCES
   utilities/amg_linklist.c
   utilities/binsearch.c
   utilities/exchange_data.c
@@ -132,6 +211,10 @@ list(APPEND sources
   utilities/threading.c
   utilities/timer.c
   utilities/timing.c
+)
+
+# Headers and sources: multivector
+list (APPEND HYPRE_HEADERS
   multivector/csr_matmultivec.h
   multivector/interpreter.h
   multivector/multivector.h
@@ -140,13 +223,21 @@ list(APPEND sources
   multivector/par_multivector.h
   multivector/seq_multivector.h
   multivector/temp_multivector.h
+)
+list (APPEND HYPRE_SOURCES
   multivector/multivector.c
   multivector/temp_multivector.c
+)
+
+# Headers and sources: krylov
+list (APPEND HYPRE_HEADERS
   krylov/HYPRE_krylov.h
   krylov/HYPRE_lobpcg.h
   krylov/HYPRE_MatvecFunctions.h
   krylov/krylov.h
   krylov/lobpcg.h
+)
+list (APPEND HYPRE_SOURCES
   krylov/bicgstab.c
   krylov/cgnr.c
   krylov/gmres.c
@@ -161,8 +252,14 @@ list(APPEND sources
   krylov/pcg.c
   krylov/HYPRE_lobpcg.c
   krylov/lobpcg.c
+)
+
+# Headers and sources: seq_mv
+list (APPEND HYPRE_HEADERS
   seq_mv/HYPRE_seq_mv.h
   seq_mv/seq_mv.h
+)
+list (APPEND HYPRE_SOURCES
   seq_mv/csr_matop.c
   seq_mv/csr_matrix.c
   seq_mv/csr_matvec.c
@@ -174,8 +271,14 @@ list(APPEND sources
   seq_mv/mapped_matrix.c
   seq_mv/multiblock_matrix.c
   seq_mv/vector.c
+)
+
+# Headers and sources: parcsr_mv
+list (APPEND HYPRE_HEADERS
   parcsr_mv/HYPRE_parcsr_mv.h
   parcsr_mv/_hypre_parcsr_mv.h
+)
+list (APPEND HYPRE_SOURCES
   parcsr_mv/communicationT.c
   parcsr_mv/F90_HYPRE_parcsr_matrix.c
   parcsr_mv/F90_HYPRE_parcsr_vector.c
@@ -196,8 +299,14 @@ list(APPEND sources
   parcsr_mv/par_csr_matvec.c
   parcsr_mv/par_vector.c
   parcsr_mv/par_make_system.c
+)
+
+# Headers and sources: parcsr_block_mv
+list (APPEND HYPRE_HEADERS
   parcsr_block_mv/par_csr_block_matrix.h
   parcsr_block_mv/csr_block_matrix.h
+)
+list (APPEND HYPRE_SOURCES
   parcsr_block_mv/csr_block_matrix.c
   parcsr_block_mv/csr_block_matvec.c
   parcsr_block_mv/par_csr_block_matrix.c
@@ -208,14 +317,26 @@ list(APPEND sources
   parcsr_block_mv/par_csr_block_interp.c
   parcsr_block_mv/par_csr_block_relax.c
   parcsr_block_mv/par_block_nodal_systems.c
+)
+
+# Headers and sources: distributed_matrix
+list (APPEND HYPRE_HEADERS
   distributed_matrix/distributed_matrix.h
+)
+list (APPEND HYPRE_SOURCES
   distributed_matrix/distributed_matrix.c
   distributed_matrix/HYPRE_distributed_matrix.c
   distributed_matrix/distributed_matrix_ISIS.c
   distributed_matrix/distributed_matrix_PETSc.c
   distributed_matrix/distributed_matrix_parcsr.c
+)
+
+# Headers and sources: IJ_mv
+list (APPEND HYPRE_HEADERS
   IJ_mv/HYPRE_IJ_mv.h
   IJ_mv/_hypre_IJ_mv.h
+)
+list (APPEND HYPRE_SOURCES
   IJ_mv/aux_parcsr_matrix.c
   IJ_mv/aux_par_vector.c
   IJ_mv/F90_HYPRE_IJMatrix.c
@@ -228,11 +349,23 @@ list(APPEND sources
   IJ_mv/IJMatrix_parcsr.c
   IJ_mv/IJVector.c
   IJ_mv/IJVector_parcsr.c
+)
+
+# Headers and sources: matrix_matrix
+list (APPEND HYPRE_HEADERS
   matrix_matrix/HYPRE_matrix_matrix_protos.h
+)
+list (APPEND HYPRE_SOURCES
   matrix_matrix/HYPRE_ConvertParCSRMatrixToDistributedMatrix.c
   matrix_matrix/HYPRE_ConvertPETScMatrixToDistributedMatrix.c
+)
+
+# Headers and sources: distributed_ls/pilut
+list (APPEND HYPRE_HEADERS
   distributed_ls/pilut/HYPRE_DistributedMatrixPilutSolver_protos.h
   distributed_ls/pilut/HYPRE_DistributedMatrixPilutSolver_types.h
+)
+list (APPEND HYPRE_SOURCES
   distributed_ls/pilut/comm.c
   distributed_ls/pilut/debug.c
   distributed_ls/pilut/distributed_qsort.c
@@ -245,6 +378,10 @@ list(APPEND sources
   distributed_ls/pilut/serilut.c
   distributed_ls/pilut/trifactor.c
   distributed_ls/pilut/util.c
+)
+
+# Headers and sources: distributed_ls/ParaSails
+list (APPEND HYPRE_SOURCES
   distributed_ls/ParaSails/ConjGrad.c
   distributed_ls/ParaSails/DiagScale.c
   distributed_ls/ParaSails/FGmres.c
@@ -259,6 +396,10 @@ list(APPEND sources
   distributed_ls/ParaSails/PrunedRows.c
   distributed_ls/ParaSails/RowPatt.c
   distributed_ls/ParaSails/StoredRows.c
+)
+
+# Headers and sources: distributed_ls/Euclid
+list (APPEND HYPRE_SOURCES
   distributed_ls/Euclid/blas_dh.c
   distributed_ls/Euclid/Euclid_apply.c
   distributed_ls/Euclid/Euclid_dh.c
@@ -287,8 +428,14 @@ list(APPEND sources
   distributed_ls/Euclid/TimeLog_dh.c
   distributed_ls/Euclid/Timer_dh.c
   distributed_ls/Euclid/Vec_dh.c
+)
+
+# Headers and sources: parcsr_ls
+list (APPEND HYPRE_HEADERS
   parcsr_ls/HYPRE_parcsr_ls.h
   parcsr_ls/_hypre_parcsr_ls.h
+)
+list (APPEND HYPRE_SOURCES
   parcsr_ls/amg_hybrid.c
   parcsr_ls/aux_interp.c
   parcsr_ls/F90_hypre_laplace.c
@@ -377,8 +524,14 @@ list(APPEND sources
   parcsr_ls/ame.c
   parcsr_ls/par_restr.c
   parcsr_ls/par_lr_restr.c
+)
+
+# Headers and sources: struct_mv
+list (APPEND HYPRE_HEADERS
   struct_mv/HYPRE_struct_mv.h
   struct_mv/_hypre_struct_mv.h
+)
+list (APPEND HYPRE_SOURCES
   struct_mv/assumed_part.c
   struct_mv/box_algebra.c
   struct_mv/box_boundary.c
@@ -407,8 +560,14 @@ list(APPEND sources
   struct_mv/struct_scale.c
   struct_mv/struct_stencil.c
   struct_mv/struct_vector.c
+)
+
+# Headers and sources: struct_ls
+list (APPEND HYPRE_HEADERS
   struct_ls/HYPRE_struct_ls.h
   struct_ls/_hypre_struct_ls.h
+)
+list (APPEND HYPRE_SOURCES
   struct_ls/coarsen.c
   struct_ls/cyclic_reduction.c
   struct_ls/F90_HYPRE_struct_bicgstab.c
@@ -474,8 +633,14 @@ list(APPEND sources
   struct_ls/sparse_msg_setup.c
   struct_ls/sparse_msg_setup_rap.c
   struct_ls/sparse_msg_solve.c
+)
+
+# Headers and sources: sstruct_mv
+list (APPEND HYPRE_HEADERS
   sstruct_mv/HYPRE_sstruct_mv.h
   sstruct_mv/_hypre_sstruct_mv.h
+)
+list (APPEND HYPRE_SOURCES
   sstruct_mv/F90_HYPRE_sstruct_graph.c
   sstruct_mv/F90_HYPRE_sstruct_grid.c
   sstruct_mv/F90_HYPRE_sstruct_matrix.c
@@ -496,8 +661,14 @@ list(APPEND sources
   sstruct_mv/sstruct_scale.c
   sstruct_mv/sstruct_stencil.c
   sstruct_mv/sstruct_vector.c
+)
+
+# Headers and sources: sstruct_ls
+list (APPEND HYPRE_HEADERS
   sstruct_ls/HYPRE_sstruct_ls.h
   sstruct_ls/_hypre_sstruct_ls.h
+)
+list (APPEND HYPRE_SOURCES
   sstruct_ls/F90_HYPRE_sstruct_bicgstab.c
   sstruct_ls/F90_HYPRE_sstruct_gmres.c
   sstruct_ls/F90_HYPRE_sstruct_flexgmres.c
@@ -563,14 +734,114 @@ list(APPEND sources
   sstruct_ls/sys_semi_restrict.c
 )
 
-#set(src ${sources} PARENT_SCOPE)
+# Configure a header file to pass CMake settings to the source code
+configure_file (
+  "${PROJECT_SOURCE_DIR}/config/HYPRE_config.h.cmake.in"
+  "${PROJECT_BINARY_DIR}/HYPRE_config.h"
+  )
 
+# BINARY must be first in order to get the correct HYPRE_config.h file
+include_directories(${hypre_BINARY_DIR})
+include_directories(${hypre_SOURCE_DIR})
+include_directories(blas)
+include_directories(lapack)
+include_directories(utilities)
+include_directories(multivector)
+include_directories(krylov)
+include_directories(seq_mv)
+include_directories(parcsr_mv)
+include_directories(parcsr_block_mv)
+include_directories(distributed_matrix)
+include_directories(IJ_mv)
+include_directories(matrix_matrix)
+include_directories(distributed_ls)
+include_directories(distributed_ls/Euclid)
+include_directories(distributed_ls/ParaSails)
+include_directories(parcsr_ls)
+include_directories(struct_mv)
+include_directories(struct_ls)
+include_directories(sstruct_mv)
+include_directories(sstruct_ls)
 
-# This corrects cmake's default Visual Studio's ugly folder organization
-#source_group("" FILES ${sources})
+# Set library build type
+if (HYPRE_SHARED)
+  set (BUILD_SHARED_LIBS ON CACHE INTERNAL "" FORCE)
+else ()
+  set (BUILD_SHARED_LIBS OFF CACHE INTERNAL "" FORCE)
+endif ()
 
-#add_library(hypre ${sources})
+# Set MPI compile flags
+if (NOT HYPRE_SEQUENTIAL)
+  find_package (MPI)
+  if ((MPI_C_FOUND) AND (NOT CMAKE_C_COMPILER STREQUAL MPI_C_COMPILER))
+    include_directories (${MPI_C_INCLUDE_PATH})
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MPI_C_COMPILE_FLAGS}")
+  endif ()
+  if ((MPI_CXX_FOUND) AND (NOT CMAKE_CXX_COMPILER STREQUAL MPI_CXX_COMPILER))
+    include_directories (${MPI_CXX_INCLUDE_PATH})
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MPI_CXX_COMPILE_FLAGS}")
+  endif ()
+endif (NOT HYPRE_SEQUENTIAL)
 
-#target_include_directories(hypre PUBLIC .)
+# Set OpenMP compile flags
+if (HYPRE_USING_OPENMP)
+  find_package (OpenMP)
+  if (OPENMP_FOUND)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+  endif (OPENMP_FOUND)
+endif (HYPRE_USING_OPENMP)
 
-#target_link_libraries(hypre PUBLIC .)
+# Turn optimization off for this file
+if (MSVC)
+  set_source_files_properties (lapack/dlamch.c PROPERTIES COMPILE_FLAGS /Od)
+else ()
+  set_source_files_properties (lapack/dlamch.c PROPERTIES COMPILE_FLAGS -O0)
+endif ()
+
+if (MSVC)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+  # Use the C++ compiler to compile these files to get around lack of C99 support
+  set_source_files_properties (utilities/hypre_hopscotch_hash.c PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (utilities/hypre_merge_sort.c     PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (seq_mv/csr_matop.c               PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_mv/par_csr_matop.c        PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_mv/par_csr_matvec.c       PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/ams.c                  PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/aux_interp.c           PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_add_cycle.c        PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_amg_setup.c        PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_coarsen.c          PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_cgc_coarsen.c      PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_jacobi_interp.c    PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_mgr_setup.c        PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_rap.c              PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_relax.c            PROPERTIES COMPILE_FLAGS /TP)
+  set_source_files_properties (parcsr_ls/par_strength.c         PROPERTIES COMPILE_FLAGS /TP)
+  #Fix issue with visual studio 2013
+  set_source_files_properties (struct_ls/pfmg3_setup_rap.c      PROPERTIES COMPILE_FLAGS /Od)
+endif ()
+
+if (HYPRE_USING_FEI)
+  add_subdirectory(FEI_mv)
+endif ()
+
+add_library (HYPRE ${HYPRE_SOURCES} ${FEI_LIBS})
+
+install (TARGETS HYPRE DESTINATION lib)
+install (FILES ${HYPRE_HEADERS} DESTINATION include)
+
+# add_subdirectory (test EXCLUDE_FROM_ALL)
+ 
+# # does this system provide the log and exp functions?
+# include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
+#  
+# check_function_exists (log HAVE_LOG)
+# check_function_exists (exp HAVE_EXP)
+ 
+# # add the MathFunctions library?
+# if (USE_MYMATH)
+#   include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
+#   add_subdirectory (MathFunctions)
+#   set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+# endif (USE_MYMATH)
