@@ -23,11 +23,11 @@ set (HYPRE_BUILD_TYPE "Release" CACHE STRING
 set (CMAKE_BUILD_TYPE "${HYPRE_BUILD_TYPE}" CACHE INTERNAL "" FORCE)
 
 # Configuration options
-option(HYPRE_SHARED               "Build a shared library" OFF)
+option(HYPRE_SHARED               "Build a shared library" ON)
 option(HYPRE_BIGINT               "Use long long int for HYPRE_Int" OFF)
 option(HYPRE_SINGLE               "Use float for HYPRE_Real" OFF)
 option(HYPRE_LONG_DOUBLE          "Use long double for HYPRE_Real" OFF)
-option(HYPRE_SEQUENTIAL           "Compile without MPI" OFF)
+option(HYPRE_SEQUENTIAL           "Compile without MPI" ON)
 option(HYPRE_TIMING               "Use HYPRE timing routines" OFF)
 option(HYPRE_USING_HYPRE_BLAS     "Use internal BLAS library" ON)
 option(HYPRE_USING_HYPRE_LAPACK   "Use internal LAPACK library" ON)
@@ -791,6 +791,19 @@ if (HYPRE_USING_OPENMP)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
   endif (OPENMP_FOUND)
 endif (HYPRE_USING_OPENMP)
+
+####################################################################################
+#nTopology: switch to right MSVC runtimes
+# C++ flags
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} /MT")
+
+# C flags
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /MTd")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /MT")
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} /MT")
+#####################################################################################
 
 # Turn optimization off for this file
 if (MSVC)
