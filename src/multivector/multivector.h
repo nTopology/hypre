@@ -27,78 +27,96 @@ extern "C" {
 #endif
 
 /* returns pointer to "real" multivector data (x->data) */
+NTOP_DLL_EXPORT
 void *
 mv_MultiVectorGetData (mv_MultiVectorPtr x);
 
   /* wraps our multivector structure around the data provided by user */
+NTOP_DLL_EXPORT
 mv_MultiVectorPtr
 mv_MultiVectorWrap( mv_InterfaceInterpreter* ii, void * data, HYPRE_Int ownsData );
 
   /* creates a multivector of width n using sample vector */
+NTOP_DLL_EXPORT
 mv_MultiVectorPtr 
 mv_MultiVectorCreateFromSampleVector( void*, HYPRE_Int n, void* sample );
 
   /* creates a multivector of the same shape as x; copies values
      if copyValues is non-zero */
+NTOP_DLL_EXPORT
 mv_MultiVectorPtr 
 mv_MultiVectorCreateCopy( mv_MultiVectorPtr x, HYPRE_Int copyValues );
 
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorDestroy( mv_MultiVectorPtr );
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 mv_MultiVectorWidth( mv_MultiVectorPtr v );
 
+NTOP_DLL_EXPORT
 HYPRE_Int
 mv_MultiVectorHeight( mv_MultiVectorPtr v );
 
   /* sets mask for v; all the subsequent operations
      apply only to masked vectors */
+NTOP_DLL_EXPORT
 void
 mv_MultiVectorSetMask( mv_MultiVectorPtr v, HYPRE_Int* mask );
 
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorClear( mv_MultiVectorPtr );
 
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorSetRandom( mv_MultiVectorPtr v, HYPRE_Int seed );
 
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorCopy( mv_MultiVectorPtr src, mv_MultiVectorPtr dest );
 
   /* computes y = a*x + y */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorAxpy( HYPRE_Complex a, mv_MultiVectorPtr x, mv_MultiVectorPtr y ); 
 
   /* computes the matrix v = x'*y stored in fortran style: gh is the leading dimension,
      h the number of rows and w the number of columns (cf. blas or lapack) */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorByMultiVector( mv_MultiVectorPtr x, mv_MultiVectorPtr y,
 				HYPRE_Int gh, HYPRE_Int h, HYPRE_Int w, HYPRE_Real* v );
 
   /*computes the diagonal of x'*y stored in diag(mask) */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorByMultiVectorDiag( mv_MultiVectorPtr, mv_MultiVectorPtr,
 				   HYPRE_Int* mask, HYPRE_Int n, HYPRE_Real* diag );
 
   /* computes y = x*v, where v is stored in fortran style */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorByMatrix( mv_MultiVectorPtr x, 
 			   HYPRE_Int gh, HYPRE_Int h, HYPRE_Int w, HYPRE_Complex* v,
 			   mv_MultiVectorPtr y );
 
   /* computes y = x*v + y, where v is stored in fortran style */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorXapy( mv_MultiVectorPtr x, 
 		       HYPRE_Int gh, HYPRE_Int h, HYPRE_Int w, HYPRE_Complex* v,
 		       mv_MultiVectorPtr y );
 
   /* computes y = x*diag(mask) */
+NTOP_DLL_EXPORT
 void mv_MultiVectorByDiagonal( mv_MultiVectorPtr x, 
 				  HYPRE_Int* mask, HYPRE_Int n, HYPRE_Complex* diag,
 				  mv_MultiVectorPtr y );
 
   /* computes y = f(x) vector-by-vector */
+NTOP_DLL_EXPORT
 void 
 mv_MultiVectorEval( void (*f)( void*, void*, void* ), 
 		       void* par,

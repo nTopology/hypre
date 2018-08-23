@@ -1212,16 +1212,27 @@ HYPRE_Int HYPRE_ParCSRHybridGetPCGNumIterations ( HYPRE_Solver solver , HYPRE_In
 HYPRE_Int HYPRE_ParCSRHybridGetFinalRelativeResidualNorm ( HYPRE_Solver solver , HYPRE_Real *norm );
 
 /* HYPRE_parcsr_int.c */
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_ParSetRandomValues ( void *v , HYPRE_Int seed );
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_ParPrintVector ( void *v , const char *file );
+NTOP_DLL_EXPORT
 void *hypre_ParReadVector ( MPI_Comm comm , const char *file );
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_ParVectorSize ( void *x );
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_ParCSRMultiVectorPrint ( void *x_ , const char *fileName );
+NTOP_DLL_EXPORT
 void *hypre_ParCSRMultiVectorRead ( MPI_Comm comm , void *ii_ , const char *fileName );
+NTOP_DLL_EXPORT
 HYPRE_Int aux_maskCount ( HYPRE_Int n , HYPRE_Int *mask );
+NTOP_DLL_EXPORT
 void aux_indexFromMask ( HYPRE_Int n , HYPRE_Int *mask , HYPRE_Int *index );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_TempParCSRSetupInterpreter ( mv_InterfaceInterpreter *i );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRSetupInterpreter ( mv_InterfaceInterpreter *i );
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRSetupMatvec ( HYPRE_MatvecFunctions *mv );
 
 /* HYPRE_parcsr_lgmres.c */
