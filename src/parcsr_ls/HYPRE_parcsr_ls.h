@@ -3806,12 +3806,14 @@ HYPRE_Int HYPRE_BoomerAMGSetISType(HYPRE_Solver solver,
  * Load interface interpreter.  Vector part loaded with hypre_ParKrylov
  * functions and multivector part loaded with mv_TempMultiVector functions.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_ParCSRSetupInterpreter(mv_InterfaceInterpreter *i);
 
 /**
  * Load Matvec interpreter with hypre_ParKrylov functions.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int
 HYPRE_ParCSRSetupMatvec(HYPRE_MatvecFunctions *mv);
 
@@ -3820,12 +3822,14 @@ HYPRE_ParCSRSetupMatvec(HYPRE_MatvecFunctions *mv);
 /*
  * Print multivector to file.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int
 hypre_ParCSRMultiVectorPrint(void *x_, const char *fileName);
 
 /*
  * Read multivector from file.
  **/
+NTOP_DLL_EXPORT
 void *
 hypre_ParCSRMultiVectorRead(MPI_Comm comm, void *ii_, const char *fileName);
 

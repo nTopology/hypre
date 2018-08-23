@@ -86,6 +86,7 @@ extern "C" {
 /**
  * LOBPCG constructor.
  */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGCreate(mv_InterfaceInterpreter *interpreter,
                              HYPRE_MatvecFunctions   *mvfunctions,
                              HYPRE_Solver            *solver);
@@ -93,12 +94,14 @@ HYPRE_Int HYPRE_LOBPCGCreate(mv_InterfaceInterpreter *interpreter,
 /**
  * LOBPCG destructor.
  */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGDestroy(HYPRE_Solver solver);
 
 /**
  * (Optional) Set the preconditioner to use.  If not called, preconditioning is
  * not used.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetPrecond(HYPRE_Solver         solver,
                                  HYPRE_PtrToSolverFcn precond,
                                  HYPRE_PtrToSolverFcn precond_setup,
@@ -106,12 +109,14 @@ HYPRE_Int HYPRE_LOBPCGSetPrecond(HYPRE_Solver         solver,
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGGetPrecond(HYPRE_Solver  solver,
                                  HYPRE_Solver *precond_data_ptr);
 
 /**
  * Set up {\tt A} and the preconditioner (if there is one).
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetup(HYPRE_Solver solver,
                             HYPRE_Matrix A,
                             HYPRE_Vector b,
@@ -120,6 +125,7 @@ HYPRE_Int HYPRE_LOBPCGSetup(HYPRE_Solver solver,
 /**
  * (Optional) Set up {\tt B}.  If not called, B = I.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetupB(HYPRE_Solver solver,
                              HYPRE_Matrix B,
                              HYPRE_Vector x);
@@ -127,6 +133,7 @@ HYPRE_Int HYPRE_LOBPCGSetupB(HYPRE_Solver solver,
 /**
  * (Optional) Set the preconditioning to be applied to Tx = b, not Ax = b.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetupT(HYPRE_Solver solver,
                              HYPRE_Matrix T,
                              HYPRE_Vector x);
@@ -134,6 +141,7 @@ HYPRE_Int HYPRE_LOBPCGSetupT(HYPRE_Solver solver,
 /**
  * Solve A x = lambda B x, y'x = 0.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSolve(HYPRE_Solver       solver,
                             mv_MultiVectorPtr  y,
                             mv_MultiVectorPtr  x,
@@ -142,18 +150,21 @@ HYPRE_Int HYPRE_LOBPCGSolve(HYPRE_Solver       solver,
 /**
  * (Optional) Set the absolute convergence tolerance.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetTol(HYPRE_Solver solver,
                              HYPRE_Real   tol);
 
 /**
  * (Optional) Set the relative convergence tolerance.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetRTol(HYPRE_Solver solver,
                               HYPRE_Real   tol);
 
 /**
  * (Optional) Set maximum number of iterations.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetMaxIter(HYPRE_Solver solver,
                                  HYPRE_Int          max_iter);
 
@@ -161,34 +172,42 @@ HYPRE_Int HYPRE_LOBPCGSetMaxIter(HYPRE_Solver solver,
  * Define which initial guess for inner PCG iterations to use: {\tt mode} = 0:
  * use zero initial guess, otherwise use RHS.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetPrecondUsageMode(HYPRE_Solver solver,
                                           HYPRE_Int          mode);
 
 /**
  * (Optional) Set the amount of printing to do to the screen.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSetPrintLevel(HYPRE_Solver solver,
                                     HYPRE_Int          level);
 
 /* Returns the pointer to residual norms matrix (blockSize x 1) */
+NTOP_DLL_EXPORT
 utilities_FortranMatrix*
 HYPRE_LOBPCGResidualNorms(HYPRE_Solver solver);
 
 /* Returns the pointer to residual norms history matrix (blockSize x maxIter) */
+NTOP_DLL_EXPORT
 utilities_FortranMatrix*
 HYPRE_LOBPCGResidualNormsHistory(HYPRE_Solver solver);
 
 /* Returns the pointer to eigenvalue history matrix (blockSize x maxIter) */
+NTOP_DLL_EXPORT
 utilities_FortranMatrix*
 HYPRE_LOBPCGEigenvaluesHistory(HYPRE_Solver solver);
 
 /* Returns the number of iterations performed by LOBPCG */
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGIterations(HYPRE_Solver solver);
 
+NTOP_DLL_EXPORT
 void hypre_LOBPCGMultiOperatorB(void *data,
                                 void *x,
                                 void *y);
 
+NTOP_DLL_EXPORT
 void lobpcg_MultiVectorByMultiVector(mv_MultiVectorPtr        x,
                                      mv_MultiVectorPtr        y,
                                      utilities_FortranMatrix *xy);

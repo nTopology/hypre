@@ -689,11 +689,17 @@ char *hypre_ReAllocIns( char *ptr ,  size_t size , HYPRE_Int location,char *file
 char *hypre_MAllocIns( size_t size , HYPRE_Int location,char *file,HYPRE_Int line);
 char *hypre_MAllocPinned( size_t size );
 #else
+NTOP_DLL_EXPORT
 void * hypre_MAlloc(size_t size, HYPRE_Int location);
+NTOP_DLL_EXPORT
 void * hypre_CAlloc( size_t count, size_t elt_size, HYPRE_Int location);
+NTOP_DLL_EXPORT
 void * hypre_ReAlloc(void *ptr, size_t size, HYPRE_Int location);
+NTOP_DLL_EXPORT
 void   hypre_Memcpy(void *dst, void *src, size_t size, HYPRE_Int loc_dst, HYPRE_Int loc_src);
+NTOP_DLL_EXPORT
 void * hypre_Memset(void *ptr, HYPRE_Int value, size_t num, HYPRE_Int location);
+NTOP_DLL_EXPORT
 void   hypre_Free(void *ptr, HYPRE_Int location);
 #endif
 /*
@@ -710,11 +716,17 @@ HYPRE_Real *hypre_IncrementSharedDataPtr ( HYPRE_Real *ptr , size_t size );
 */
 
 /* memory_dmalloc.c */
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_InitMemoryDebugDML( HYPRE_Int id );
+NTOP_DLL_EXPORT
 HYPRE_Int hypre_FinalizeMemoryDebugDML( void );
+NTOP_DLL_EXPORT
 char *hypre_MAllocDML( HYPRE_Int size , char *file , HYPRE_Int line );
+NTOP_DLL_EXPORT
 char *hypre_CAllocDML( HYPRE_Int count , HYPRE_Int elt_size , char *file , HYPRE_Int line );
+NTOP_DLL_EXPORT
 char *hypre_ReAllocDML( char *ptr , HYPRE_Int size , char *file , HYPRE_Int line );
+NTOP_DLL_EXPORT
 void hypre_FreeDML( char *ptr , char *file , HYPRE_Int line );
 
 #ifdef __cplusplus
