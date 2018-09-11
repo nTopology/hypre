@@ -512,6 +512,7 @@ HYPRE_Int HYPRE_GMRESGetConverged(HYPRE_Solver  solver,
  * Prepare to solve the system.  The coefficient data in {\tt b} and {\tt x} is
  * ignored here, but information about the layout of the data may be used.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetup(HYPRE_Solver solver,
                          HYPRE_Matrix A,
                          HYPRE_Vector b,
@@ -520,6 +521,7 @@ HYPRE_Int HYPRE_FlexGMRESSetup(HYPRE_Solver solver,
 /**
  * Solve the system.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSolve(HYPRE_Solver solver,
                          HYPRE_Matrix A,
                          HYPRE_Vector b,
@@ -528,6 +530,7 @@ HYPRE_Int HYPRE_FlexGMRESSolve(HYPRE_Solver solver,
 /**
  * (Optional) Set the convergence tolerance.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetTol(HYPRE_Solver solver,
                           HYPRE_Real   tol);
 
@@ -539,34 +542,40 @@ HYPRE_Int HYPRE_FlexGMRESSetTol(HYPRE_Solver solver,
  * $\|r\| \leq$ max(relative$\_$tolerance$\ast \|b\|$, absolute$\_$tolerance).)
  *
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetAbsoluteTol(HYPRE_Solver solver,
                                   HYPRE_Real   a_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetConvergenceFactorTol(HYPRE_Solver solver, HYPRE_Real cf_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetMinIter(HYPRE_Solver solver, HYPRE_Int min_iter);
 
 /**
  * (Optional) Set maximum number of iterations.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetMaxIter(HYPRE_Solver solver,
                               HYPRE_Int          max_iter);
 
 /**
  * (Optional) Set the maximum size of the Krylov space.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetKDim(HYPRE_Solver solver,
                            HYPRE_Int          k_dim);
 
 /**
  * (Optional) Set the preconditioner to use.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetPrecond(HYPRE_Solver         solver,
                               HYPRE_PtrToSolverFcn precond,
                               HYPRE_PtrToSolverFcn precond_setup,
@@ -575,80 +584,95 @@ HYPRE_Int HYPRE_FlexGMRESSetPrecond(HYPRE_Solver         solver,
 /**
  * (Optional) Set the amount of logging to do.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetLogging(HYPRE_Solver solver,
                               HYPRE_Int          logging);
 
 /**
  * (Optional) Set the amount of printing to do to the screen.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetPrintLevel(HYPRE_Solver solver,
                                  HYPRE_Int          level);
 
 /**
  * Return the number of iterations taken.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetNumIterations(HYPRE_Solver  solver,
                                     HYPRE_Int          *num_iterations);
 
 /**
  * Return the norm of the final relative residual.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetFinalRelativeResidualNorm(HYPRE_Solver  solver,
                                                 HYPRE_Real   *norm);
 
 /**
  * Return the residual.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetResidual(HYPRE_Solver   solver,
                                void         **residual);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetTol(HYPRE_Solver  solver,
                           HYPRE_Real   *tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetConvergenceFactorTol(HYPRE_Solver solver, HYPRE_Real *cf_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetStopCrit(HYPRE_Solver solver, HYPRE_Int *stop_crit);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetMinIter(HYPRE_Solver solver, HYPRE_Int *min_iter);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetMaxIter(HYPRE_Solver  solver,
                               HYPRE_Int          *max_iter);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetKDim(HYPRE_Solver  solver,
                            HYPRE_Int          *k_dim);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetPrecond(HYPRE_Solver  solver,
                               HYPRE_Solver *precond_data_ptr);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetLogging(HYPRE_Solver  solver,
                               HYPRE_Int          *level);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetPrintLevel(HYPRE_Solver  solver,
                                  HYPRE_Int          *level);
 
 /**
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESGetConverged(HYPRE_Solver  solver,
                                 HYPRE_Int          *converged);
 
@@ -656,6 +680,7 @@ HYPRE_Int HYPRE_FlexGMRESGetConverged(HYPRE_Solver  solver,
  * (Optional) Set a user-defined function to modify solve-time preconditioner
  * attributes.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_FlexGMRESSetModifyPC(HYPRE_Solver           solver,
                                HYPRE_PtrToModifyPCFcn modify_pc);
 

@@ -1316,12 +1316,14 @@ HYPRE_Int HYPRE_BoomerAMGSetCpointsToKeep(HYPRE_Solver solver,
 /**
  * Create a ParaSails preconditioner.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsCreate(MPI_Comm      comm,
                                 HYPRE_Solver *solver);
 
 /**
  * Destroy a ParaSails preconditioner.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsDestroy(HYPRE_Solver solver);
 
 /**
@@ -1333,6 +1335,7 @@ HYPRE_Int HYPRE_ParaSailsDestroy(HYPRE_Solver solver);
  * @param b Ignored by this function.
  * @param x Ignored by this function.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetup(HYPRE_Solver       solver,
                                HYPRE_ParCSRMatrix A,
                                HYPRE_ParVector    b,
@@ -1347,6 +1350,7 @@ HYPRE_Int HYPRE_ParaSailsSetup(HYPRE_Solver       solver,
  * @param b [IN] Vector to precondition.
  * @param x [OUT] Preconditioned vector.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSolve(HYPRE_Solver       solver,
                                HYPRE_ParCSRMatrix A,
                                HYPRE_ParVector    b,
@@ -1365,6 +1369,7 @@ HYPRE_Int HYPRE_ParaSailsSolve(HYPRE_Solver       solver,
  * @param nlevels [IN] Value of levels parameter, $0 \le$ nlevels.  
  *                     The default value is 1.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetParams(HYPRE_Solver solver,
                                    HYPRE_Real   thresh,
                                    HYPRE_Int    nlevels);
@@ -1379,6 +1384,7 @@ HYPRE_Int HYPRE_ParaSailsSetParams(HYPRE_Solver solver,
  *                    Values from 0.05 to 0.1 are recommended.
  *                    The default value is 0.1.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetFilter(HYPRE_Solver solver,
                                    HYPRE_Real   filter);
 
@@ -1397,6 +1403,7 @@ HYPRE_Int HYPRE_ParaSailsSetFilter(HYPRE_Solver solver,
  * @param solver [IN] Preconditioner object for which to set symmetry parameter.
  * @param sym [IN] Symmetry parameter.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetSym(HYPRE_Solver solver,
                                 HYPRE_Int    sym);
 
@@ -1416,6 +1423,7 @@ HYPRE_Int HYPRE_ParaSailsSetSym(HYPRE_Solver solver,
  *                     fast to construct.  The default value when this 
  *                     parameter is not set is 0.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetLoadbal(HYPRE_Solver solver,
                                     HYPRE_Real   loadbal);
 
@@ -1445,6 +1453,7 @@ HYPRE_Int HYPRE_ParaSailsSetReuse(HYPRE_Solver solver,
  *                     sends statistics of the setup procedure to stdout.
  *                     The default value when this parameter is not set is 0.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParaSailsSetLogging(HYPRE_Solver solver,
                                     HYPRE_Int    logging);
 
@@ -2455,63 +2464,67 @@ HYPRE_Int HYPRE_ParCSRGMRESGetFinalRelativeResidualNorm(HYPRE_Solver  solver,
 /**
  * Create a solver object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESCreate(MPI_Comm      comm,
                                       HYPRE_Solver *solver);
 
 /**
  * Destroy a solver object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESDestroy(HYPRE_Solver solver);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetup(HYPRE_Solver       solver,
                                      HYPRE_ParCSRMatrix A,
                                      HYPRE_ParVector    b,
                                      HYPRE_ParVector    x);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSolve(HYPRE_Solver       solver,
                                      HYPRE_ParCSRMatrix A,
                                      HYPRE_ParVector    b,
                                      HYPRE_ParVector    x);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetKDim(HYPRE_Solver solver,
                                        HYPRE_Int    k_dim);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetTol(HYPRE_Solver solver,
                                       HYPRE_Real   tol);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetAbsoluteTol(HYPRE_Solver solver,
                                               HYPRE_Real   a_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetMinIter(HYPRE_Solver solver,
                                           HYPRE_Int    min_iter);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetMaxIter(HYPRE_Solver solver,
                                           HYPRE_Int    max_iter);
 
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetPrecond(HYPRE_Solver             solver,
                                           HYPRE_PtrToParSolverFcn  precond,
                                           HYPRE_PtrToParSolverFcn  precond_setup,
                                           HYPRE_Solver             precond_solver);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESGetPrecond(HYPRE_Solver  solver,
                                           HYPRE_Solver *precond_data);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetLogging(HYPRE_Solver solver,
                                           HYPRE_Int    logging);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetPrintLevel(HYPRE_Solver solver,
                                              HYPRE_Int    print_level);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESGetNumIterations(HYPRE_Solver  solver,
                                                 HYPRE_Int    *num_iterations);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESGetFinalRelativeResidualNorm(HYPRE_Solver  solver,
                                                             HYPRE_Real   *norm);
-
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRFlexGMRESSetModifyPC( HYPRE_Solver           solver,
                                             HYPRE_PtrToModifyPCFcn modify_pc);
    
@@ -2531,61 +2544,77 @@ HYPRE_Int HYPRE_ParCSRFlexGMRESSetModifyPC( HYPRE_Solver           solver,
 /**
  * Create a solver object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESCreate(MPI_Comm      comm,
                                    HYPRE_Solver *solver);
 
 /**
  * Destroy a solver object.
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESDestroy(HYPRE_Solver solver);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetup(HYPRE_Solver       solver,
                                   HYPRE_ParCSRMatrix A,
                                   HYPRE_ParVector    b,
                                   HYPRE_ParVector    x);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSolve(HYPRE_Solver       solver,
                                   HYPRE_ParCSRMatrix A,
                                   HYPRE_ParVector    b,
                                   HYPRE_ParVector    x);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetKDim(HYPRE_Solver solver,
                                     HYPRE_Int    k_dim);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetAugDim(HYPRE_Solver solver,
                                       HYPRE_Int    aug_dim);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetTol(HYPRE_Solver solver,
                                    HYPRE_Real   tol);
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetAbsoluteTol(HYPRE_Solver solver,
                                            HYPRE_Real   a_tol);
 
 /*
  * RE-VISIT
  **/
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetMinIter(HYPRE_Solver solver,
                                        HYPRE_Int    min_iter);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetMaxIter(HYPRE_Solver solver,
                                        HYPRE_Int    max_iter);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetPrecond(HYPRE_Solver             solver,
                                        HYPRE_PtrToParSolverFcn  precond,
                                        HYPRE_PtrToParSolverFcn  precond_setup,
                                        HYPRE_Solver             precond_solver);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESGetPrecond(HYPRE_Solver  solver,
                                        HYPRE_Solver *precond_data);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetLogging(HYPRE_Solver solver,
                                        HYPRE_Int    logging);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESSetPrintLevel(HYPRE_Solver solver,
                                           HYPRE_Int    print_level);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESGetNumIterations(HYPRE_Solver  solver,
                                              HYPRE_Int    *num_iterations);
 
+NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRLGMRESGetFinalRelativeResidualNorm(HYPRE_Solver  solver,
                                                          HYPRE_Real   *norm);
 
