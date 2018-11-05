@@ -145,7 +145,9 @@ NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_LOBPCGSolve(HYPRE_Solver       solver,
                             mv_MultiVectorPtr  y,
                             mv_MultiVectorPtr  x,
-                            HYPRE_Real        *lambda );
+                            HYPRE_Real        *lambda,
+                            int(*progCallback)(int progress, void* data),
+                            void* callBackData);
 
 /**
  * (Optional) Set the absolute convergence tolerance.

@@ -599,7 +599,8 @@ HYPRE_Int hypre_AMESolve(void *esolver)
                 ame_data -> eigenvalues,
                 NULL, ame_data -> block_size,
                 residuals,
-                NULL, ame_data -> block_size);
+                NULL, ame_data -> block_size,
+                NULL, NULL);
 
    hypre_TFree(residuals, HYPRE_MEMORY_HOST);
 

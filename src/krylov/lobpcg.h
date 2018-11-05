@@ -55,7 +55,7 @@ lobpcg_solve( mv_MultiVectorPtr blockVectorX,
 	      lobpcg_Tolerance tolerance,
 	      HYPRE_Int maxIterations,
 	      HYPRE_Int verbosityLevel,
-	      HYPRE_Int* iterationNumber,
+        HYPRE_Int* iterationNumber,
 
 /* eigenvalues; "lambda_values" should point to array  containing <blocksize> doubles where <blocksi
 ze> is the width of multivector "blockVectorX" */
@@ -81,7 +81,9 @@ argument If you don't need residual norms history, provide NULL in this entry */
               HYPRE_Real * residualNormsHistory_values ,
 
 /* global height of the matrix (stored in fotran-style)  specified by previous argument */
-              HYPRE_Int residualNormsHistory_gh
+              HYPRE_Int residualNormsHistory_gh,
+             int(*progCallback)(int progress, void* data),
+             void* callBackData
 
 );
 

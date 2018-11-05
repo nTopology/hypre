@@ -373,7 +373,9 @@ HYPRE_Int
 hypre_LOBPCGSolve( void *vdata, 
 		   mv_MultiVectorPtr con, 
 		   mv_MultiVectorPtr vec, 
-		   HYPRE_Real* val )
+       HYPRE_Real* val,
+       int(*progCallback)(int progress, void* data),
+       void* callBackData)
 {
    hypre_LOBPCGData* data = (hypre_LOBPCGData*)vdata;
    HYPRE_Int (*precond)(void*,void*,void*,void*) = (data->precondFunctions).Precond;
@@ -429,7 +431,9 @@ hypre_LOBPCGSolve( void *vdata,
                  utilities_FortranMatrixGlobalHeight(lambdaHistory),
                  utilities_FortranMatrixValues(residuals),
                  utilities_FortranMatrixValues(residualsHistory),
-                 utilities_FortranMatrixGlobalHeight(residualsHistory)
+                 utilities_FortranMatrixGlobalHeight(residualsHistory),
+                 progCallback,
+                 callBackData
       );
 
    return hypre_error_flag;
@@ -527,9 +531,11 @@ HYPRE_LOBPCGSetupT( HYPRE_Solver solver,
 
 HYPRE_Int 
 HYPRE_LOBPCGSolve( HYPRE_Solver solver, mv_MultiVectorPtr con, 
-		   mv_MultiVectorPtr vec, HYPRE_Real* val )
+                   mv_MultiVectorPtr vec, HYPRE_Real* val,
+                   int(*progCallback)(int progress, void* data),
+                   void* callBackData)
 {
-   return( hypre_LOBPCGSolve( (void *) solver, con, vec, val ) );
+   return( hypre_LOBPCGSolve( (void *) solver, con, vec, val, progCallback, callBackData ) );
 }
 
 HYPRE_Int
