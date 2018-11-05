@@ -264,7 +264,9 @@ HYPRE_Int
 hypre_PCGSolve( void *pcg_vdata,
                 void *A,
                 void *b,
-                void *x         )
+                void *x, 
+                int(*progCallback)(int progress, void* data),
+                void* callBackData)
 {
    hypre_PCGData  *pcg_data     =  (hypre_PCGData *)pcg_vdata;
    hypre_PCGFunctions *pcg_functions = pcg_data->functions;
@@ -475,6 +477,14 @@ hypre_PCGSolve( void *pcg_vdata,
 
    while ((i+1) <= max_iter)
    {
+     if (progCallback != NULL)
+     {
+       if (!progCallback((double)i / max_iter * 100, callBackData))
+       {
+         break;
+       }
+     }
+
       /*--------------------------------------------------------------------
        * the core CG calculations...
        *--------------------------------------------------------------------*/

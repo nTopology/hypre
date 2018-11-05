@@ -71,7 +71,9 @@ HYPRE_SStructPCGSolve( HYPRE_SStructSolver solver,
    return( HYPRE_PCGSolve( (HYPRE_Solver) solver,
                            (HYPRE_Matrix) A,
                            (HYPRE_Vector) b,
-                           (HYPRE_Vector) x ) );
+                           (HYPRE_Vector) x, 
+                           NULL,
+                           NULL)  );
 }
 
 /*--------------------------------------------------------------------------

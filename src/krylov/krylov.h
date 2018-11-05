@@ -1349,7 +1349,7 @@ HYPRE_Int HYPRE_LGMRESGetResidual ( HYPRE_Solver solver , void **residual );
 NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetup ( HYPRE_Solver solver , HYPRE_Matrix A , HYPRE_Vector b , HYPRE_Vector x );
 NTOP_DLL_EXPORT
-HYPRE_Int HYPRE_PCGSolve ( HYPRE_Solver solver , HYPRE_Matrix A , HYPRE_Vector b , HYPRE_Vector x );
+HYPRE_Int HYPRE_PCGSolve ( HYPRE_Solver solver , HYPRE_Matrix A , HYPRE_Vector b , HYPRE_Vector x, int(*progCallback)(int progress, void* func), void* callBackData);
 NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSetTol ( HYPRE_Solver solver , HYPRE_Real tol );
 NTOP_DLL_EXPORT
@@ -1420,7 +1420,7 @@ void *hypre_PCGCreate ( hypre_PCGFunctions *pcg_functions );
 HYPRE_Int hypre_PCGDestroy ( void *pcg_vdata );
 HYPRE_Int hypre_PCGGetResidual ( void *pcg_vdata , void **residual );
 HYPRE_Int hypre_PCGSetup ( void *pcg_vdata , void *A , void *b , void *x );
-HYPRE_Int hypre_PCGSolve ( void *pcg_vdata , void *A , void *b , void *x );
+HYPRE_Int hypre_PCGSolve ( void *pcg_vdata , void *A , void *b , void *x , int(*progCallback)(int progress, void* func), void* callBackData);
 HYPRE_Int hypre_PCGSetTol ( void *pcg_vdata , HYPRE_Real tol );
 HYPRE_Int hypre_PCGGetTol ( void *pcg_vdata , HYPRE_Real *tol );
 HYPRE_Int hypre_PCGSetAbsoluteTol ( void *pcg_vdata , HYPRE_Real a_tol );

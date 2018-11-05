@@ -1681,7 +1681,7 @@ hypre_AMGHybridSolve( void               *AMGhybrid_vdata,
      /*---------------------------------------------------------------------
       * Solve with DSCG.
       *---------------------------------------------------------------------*/
-     hypre_PCGSolve(pcg_solver, (void*) A, (void*) b, (void*) x);
+     hypre_PCGSolve(pcg_solver, (void*) A, (void*) b, (void*) x, NULL, NULL);
 
      /*---------------------------------------------------------------------
       * Get information for DSCG.
@@ -1936,7 +1936,7 @@ hypre_AMGHybridSolve( void               *AMGhybrid_vdata,
          hypre_PCGSetup(pcg_solver, (void*) A, (void*) b, (void*) x);
 
          /* Solve */
-         hypre_PCGSolve(pcg_solver, (void*) A, (void*) b, (void*) x);
+         hypre_PCGSolve(pcg_solver, (void*) A, (void*) b, (void*) x, NULL, NULL);
 
          /* Get information from PCG that is always logged in AMGhybrid solver*/
          hypre_PCGGetNumIterations(pcg_solver, &pcg_num_its);

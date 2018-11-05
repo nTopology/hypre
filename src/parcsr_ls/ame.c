@@ -491,7 +491,7 @@ HYPRE_Int hypre_AMEDiscrDivFreeComponent(void *esolver, hypre_ParVector *b)
    HYPRE_ParCSRPCGSolve(ame_data -> B2_G,
                         (HYPRE_ParCSRMatrix)ame_data -> A_G,
                         (HYPRE_ParVector)ame_data -> t1,
-                        (HYPRE_ParVector)ame_data -> t2);
+                        (HYPRE_ParVector)ame_data -> t2, NULL, NULL);
 
    /* b = b - G t2 */
    hypre_ParCSRMatrixMatvec(-1.0, ame_data -> G, ame_data -> t2, 1.0, b);

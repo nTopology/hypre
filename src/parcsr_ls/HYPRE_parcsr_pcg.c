@@ -75,12 +75,16 @@ HYPRE_Int
 HYPRE_ParCSRPCGSolve( HYPRE_Solver solver,
                       HYPRE_ParCSRMatrix A,
                       HYPRE_ParVector b,
-                      HYPRE_ParVector x      )
+                      HYPRE_ParVector x,
+                      int(*progCallback)(int progress, void* func),
+                      void * callBackData)
 {
    return( HYPRE_PCGSolve( solver,
                            (HYPRE_Matrix) A,
                            (HYPRE_Vector) b,
-                           (HYPRE_Vector) x ) );
+                           (HYPRE_Vector) x,
+                           progCallback,
+                           callBackData) );
 }
 
 /*--------------------------------------------------------------------------

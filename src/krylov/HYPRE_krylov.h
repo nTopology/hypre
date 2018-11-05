@@ -107,7 +107,9 @@ NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_PCGSolve(HYPRE_Solver solver,
                    HYPRE_Matrix A,
                    HYPRE_Vector b,
-                   HYPRE_Vector x);
+                   HYPRE_Vector x, 
+                   int(*progCallback)(int progress, void* func),
+                   void* callBackData);
 
 /**
  * (Optional) Set the relative convergence tolerance.

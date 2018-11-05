@@ -1295,7 +1295,7 @@ HYPRE_Int HYPRE_ParCSRPCGDestroy ( HYPRE_Solver solver );
 NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetup ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
 NTOP_DLL_EXPORT
-HYPRE_Int HYPRE_ParCSRPCGSolve ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x );
+HYPRE_Int HYPRE_ParCSRPCGSolve ( HYPRE_Solver solver , HYPRE_ParCSRMatrix A , HYPRE_ParVector b , HYPRE_ParVector x, int(*progCallback)(int progress, void* func), void* callBackData);
 NTOP_DLL_EXPORT
 HYPRE_Int HYPRE_ParCSRPCGSetTol ( HYPRE_Solver solver , HYPRE_Real tol );
 NTOP_DLL_EXPORT

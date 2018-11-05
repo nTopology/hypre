@@ -264,7 +264,9 @@ hypre_FACSolve3( void                 *fac_vdata,
            HYPRE_PCGSolve((HYPRE_Solver) csolver, 
                           (HYPRE_Matrix) A_level[0],
                           (HYPRE_Vector) b_level[0],
-                          (HYPRE_Vector) x_level[0]);
+                          (HYPRE_Vector) x_level[0], 
+                          NULL,
+                          NULL);
        }
        else if (csolver_type==2)
        {

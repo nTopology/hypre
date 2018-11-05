@@ -90,7 +90,7 @@ hypre_F90_IFACE(hypre_parcsrpcgsolve, HYPRE_PARCSRPCGSOLVE)
            hypre_F90_PassObj (HYPRE_Solver, solver),
            hypre_F90_PassObj (HYPRE_ParCSRMatrix, A),
            hypre_F90_PassObj (HYPRE_ParVector, b),
-           hypre_F90_PassObj (HYPRE_ParVector, x)       ) );
+           hypre_F90_PassObj (HYPRE_ParVector, x) , NULL, NULL ) );
 }
 
 /*--------------------------------------------------------------------------

@@ -52,12 +52,16 @@ HYPRE_Int
 HYPRE_PCGSolve( HYPRE_Solver solver,
                 HYPRE_Matrix A,
                 HYPRE_Vector b,
-                HYPRE_Vector x )
+                HYPRE_Vector x,
+                int(*progCallback)(int progress),
+                void* callBackData)
 {
    return( hypre_PCGSolve( (void *) solver,
                            (void *) A,
                            (void *) b,
-                           (void *) x ) );
+                           (void *) x,
+                           progCallback,
+                           callBackData) );
 }
 
 /*--------------------------------------------------------------------------

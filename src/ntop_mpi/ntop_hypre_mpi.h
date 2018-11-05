@@ -7,7 +7,7 @@ extern "C" {
 #endif
 
 NTOP_DLL_EXPORT
-void ntop_hypre_init_mpi();
+void ntop_hypre_init_mpi(int myid, int num_procs);
 
 NTOP_DLL_EXPORT
 void ntop_hypre_finalize_mpi();
